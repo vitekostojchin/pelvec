@@ -170,6 +170,53 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	color: #fff;
 	background-color: #cfa549;
 }
+#menu select#language-selector {
+    font-size: 15px;
+    font-weight: 500;
+    color: #ddd;
+    background-color: #333; /* Darker background to make it stand out */
+    border: 2px solid #cfa549; /* Gold border to match your brand color */
+    border-radius: 5px; /* Rounded corners to make it more modern */
+    padding: 6px 15px;
+    margin: 10px 15px 0 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease; /* Smooth transition */
+    -webkit-appearance: none;  /* Remove default styling on Webkit browsers */
+    -moz-appearance: none;     /* Remove default styling on Firefox */
+    appearance: none;          /* Remove default styling on other browsers */
+    outline: none;
+}
+
+/* Add a custom dropdown arrow */
+#menu select#language-selector::-ms-expand {
+    display: none;  /* Hide the default dropdown arrow in Internet Explorer */
+}
+
+/* Hover effect for select to match navbar links */
+#menu select#language-selector:hover {
+    color: #fff; /* Text color change on hover */
+    border-color: #cfa549; /* Highlight border on hover */
+    background-color: #444; /* Lighter background on hover */
+}
+
+/* Focus effect for select */
+#menu select#language-selector:focus {
+    color: #fff;
+    border-color: #cfa549;
+    background-color: #444;
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 5px rgba(207, 165, 73, 0.5); /* Soft glow when focused */
+}
+
+/* Add a custom dropdown icon for the select element */
+#menu select#language-selector {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zY2hlbWVzL3htbG5zL3N2ZyIgdmlld0JveD0iMCAwIDAgMCI+PHBhdGggZD0iTTEuNzE1IDEwLjkyMTQxN0wtMi44MzE3NzUgMTAuODc5NTUzOTddYXR0c2h5bGk9IiZ3ZWYHoxYXNhQ29tcG9uZW4iTGVuYWlqa2gwMTMybuAMNSQhbC...');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 10px 10px;
+}
+
 /* Header Section */
 .intro {
 	display: table;
@@ -520,6 +567,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cfa549', end
 	color: #fff;
 	font-weight: 400;
 	margin: 0;
+}
+#call-reservation a {
+	font-family: 'Open Sans', sans-serif;
+	color: rgba(0, 0, 0, 0.6);
+
 }
 #call-reservation hr {
 	background: #fff;
