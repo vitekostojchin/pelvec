@@ -93,19 +93,22 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 #menu {
 	padding: 20px;
 	transition: all 0.8s;
-}
-#menu.navbar-default {
-	background-color: rgba(248, 248, 248, 0);
+  }
+  
+  #menu.navbar-default {
+	background-color: rgba(248, 248, 248, 0); /* Transparent background by default */
 	border-color: rgba(231, 231, 231, 0);
-}
-#menu a.navbar-brand {
+  }
+  
+  #menu a.navbar-brand {
 	font-family: 'Alex Brush';
 	font-size: 36px;
 	color: #cfa549;
 	font-weight: 700;
 	letter-spacing: 1px;
-}
-#menu.navbar-default .navbar-nav > li > a {
+  }
+  
+  #menu.navbar-default .navbar-nav > li > a {
 	text-transform: uppercase;
 	color: #ddd;
 	font-weight: 500;
@@ -114,45 +117,91 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	border: 2px solid transparent;
 	letter-spacing: 0.5px;
 	margin: 10px 15px 0 15px;
-}
-#menu.navbar-default .navbar-nav > li > a:hover {
+  }
+  
+  #menu.navbar-default .navbar-nav > li > a:hover {
 	color: #cfa549;
-}
-.on {
+  }
+  
+  .on {
 	background-color: #262626 !important;
 	padding: 0 !important;
 	padding: 10px 0 !important;
-}
-.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  }
+  
+  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	color: #cfa549 !important;
 	background-color: transparent;
-}
-.navbar-toggle {
+  }
+  
+  .navbar-toggle {
 	border-radius: 0;
-}
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  }
+  
+  .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
 	background-color: #cfa549;
 	border-color: #cfa549;
-}
-.navbar-default .navbar-toggle:hover>.icon-bar {
+  }
+  
+  .navbar-default .navbar-toggle:hover > .icon-bar {
 	background-color: #FFF;
-}
-.section-title {
+  }
+  
+  /* For smaller screens (mobile), make the navbar background solid */
+  @media (max-width: 768px) {
+	#menu.navbar-default {
+	  background-color: #262626; /* Solid background for mobile */
+	  border-color: #cfa549; /* Border color to match */
+	  padding: 10px; /* Reduced padding on mobile */
+	}
+  
+	#menu.navbar-default .navbar-nav > li > a {
+	  color: #fff; /* Text color changes for better visibility */
+	  font-size: 14px; /* Smaller font size for links */
+	  padding: 10px 15px; /* Adjust padding */
+	  margin: 5px 0; /* Adjust margins */
+	}
+  
+	.navbar-toggle {
+	  margin-top: 10px; /* Adjust the toggle button position */
+	}
+  }
+  
+  /* Optional: Adjust the navbar size for very small screens (extra mobile phones) */
+  @media (max-width: 480px) {
+	#menu.navbar-default {
+	  padding: 8px; /* Even smaller padding for smaller screens */
+	}
+  
+	#menu.navbar-default .navbar-nav > li > a {
+	  font-size: 12px; /* Even smaller font size */
+	}
+  
+	.navbar-toggle {
+	  padding: 10px; /* Adjust size of toggle button */
+	}
+  }
+  
+  .section-title {
 	margin-bottom: 70px;
-}
-.section-title .overlay {
+  }
+  
+  .section-title .overlay {
 	padding: 80px 0;
 	background: rgba(0, 0, 0, 0.7);
-}
-.section-title p {
+  }
+  
+  .section-title p {
 	font-size: 22px;
-	color: rgba(255,255,255,0.8);
-}
-.section-title hr {
+	color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .section-title hr {
 	margin: 0 auto;
 	margin-bottom: 40px;
-}
-.btn-custom {
+  }
+  
+  .btn-custom {
 	text-transform: uppercase;
 	color: #fff;
 	background-color: #cfa549;
@@ -165,58 +214,60 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	border-radius: 0;
 	margin-top: 20px;
 	transition: all 0.5s;
-}
-.btn-custom:hover, .btn-custom:focus, .btn-custom.focus, .btn-custom:active, .btn-custom.active {
+  }
+  
+  .btn-custom:hover, .btn-custom:focus, .btn-custom.focus, .btn-custom:active, .btn-custom.active {
 	color: #fff;
 	background-color: #cfa549;
-}
-#menu select#language-selector {
-    font-size: 15px;
-    font-weight: 500;
-    color: #ddd;
-    background-color: #333; /* Darker background to make it stand out */
-    border: 2px solid #cfa549; /* Gold border to match your brand color */
-    border-radius: 5px; /* Rounded corners to make it more modern */
-    padding: 6px 15px;
-    margin: 10px 15px 0 15px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    transition: all 0.3s ease; /* Smooth transition */
-    -webkit-appearance: none;  /* Remove default styling on Webkit browsers */
-    -moz-appearance: none;     /* Remove default styling on Firefox */
-    appearance: none;          /* Remove default styling on other browsers */
-    outline: none;
-}
-
-/* Add a custom dropdown arrow */
-#menu select#language-selector::-ms-expand {
-    display: none;  /* Hide the default dropdown arrow in Internet Explorer */
-}
-
-/* Hover effect for select to match navbar links */
-#menu select#language-selector:hover {
-    color: #fff; /* Text color change on hover */
-    border-color: #cfa549; /* Highlight border on hover */
-    background-color: #444; /* Lighter background on hover */
-}
-
-/* Focus effect for select */
-#menu select#language-selector:focus {
-    color: #fff;
-    border-color: #cfa549;
-    background-color: #444;
-    outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 5px rgba(207, 165, 73, 0.5); /* Soft glow when focused */
-}
-
-/* Add a custom dropdown icon for the select element */
-#menu select#language-selector {
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zY2hlbWVzL3htbG5zL3N2ZyIgdmlld0JveD0iMCAwIDAgMCI+PHBhdGggZD0iTTEuNzE1IDEwLjkyMTQxN0wtMi44MzE3NzUgMTAuODc5NTUzOTddYXR0c2h5bGk9IiZ3ZWYHoxYXNhQ29tcG9uZW4iTGVuYWlqa2gwMTMybuAMNSQhbC...');
-    background-repeat: no-repeat;
-    background-position: right center;
-    background-size: 10px 10px;
-}
-
+  }
+  
+  #menu select#language-selector {
+	font-size: 15px;
+	font-weight: 500;
+	color: #ddd;
+	background-color: #333; /* Darker background to make it stand out */
+	border: 2px solid #cfa549; /* Gold border to match your brand color */
+	border-radius: 5px; /* Rounded corners to make it more modern */
+	padding: 6px 15px;
+	margin: 10px 15px 0 15px;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+	transition: all 0.3s ease; /* Smooth transition */
+	-webkit-appearance: none;  /* Remove default styling on Webkit browsers */
+	-moz-appearance: none;     /* Remove default styling on Firefox */
+	appearance: none;          /* Remove default styling on other browsers */
+	outline: none;
+  }
+  
+  /* Add a custom dropdown arrow */
+  #menu select#language-selector::-ms-expand {
+	display: none;  /* Hide the default dropdown arrow in Internet Explorer */
+  }
+  
+  /* Hover effect for select to match navbar links */
+  #menu select#language-selector:hover {
+	color: #fff; /* Text color change on hover */
+	border-color: #cfa549; /* Highlight border on hover */
+	background-color: #444; /* Lighter background on hover */
+  }
+  
+  /* Focus effect for select */
+  #menu select#language-selector:focus {
+	color: #fff;
+	border-color: #cfa549;
+	background-color: #444;
+	outline: none; /* Remove default focus outline */
+	box-shadow: 0 0 5px rgba(207, 165, 73, 0.5); /* Soft glow when focused */
+  }
+  
+  /* Add a custom dropdown icon for the select element */
+  #menu select#language-selector {
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zY2hlbWVzL3htbG5zL3N2ZyIgdmlld0JveD0iMCAwIDAgMCI+PHBhdGggZD0iTTEuNzE1IDEwLjkyMTQxN0wtMi44MzE3NzUgMTAuODc5NTUzOTddYXR0c2h5bGk9IiZ3ZWYHoxYXNhQ29tcG9uZW4iTGVuYWlqa2gwMTMybuAMNSQhbC...');
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-size: 10px 10px;
+  }
+  
 /* Header Section */
 .intro {
 	display: table;
@@ -769,17 +820,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#779936', end
   }
   
   .loader img {
-	width: 120px; /* Adjust based on your logo size */
+	width: 120px; /* Initial size, you can adjust */
 	height: auto;
-	animation: rotateLogo 2s linear infinite;
+	animation: expandAndFade 2s ease-out forwards;
   }
   
-  @keyframes rotateLogo {
+  /* Keyframes for scaling up and fading out the loader */
+  @keyframes expandAndFade {
 	0% {
-	  transform: rotate(0deg);
+	  transform: scale(0.5); /* Start small */
+	  opacity: 1; /* Fully visible */
+	}
+	50% {
+	  transform: scale(1.5); /* Scale up */
+	  opacity: 0.8; /* Slightly transparent */
 	}
 	100% {
-	  transform: rotate(360deg);
+	  transform: scale(5); /* Grow much larger */
+	  opacity: 0; /* Fade out completely */
 	}
   }
 	

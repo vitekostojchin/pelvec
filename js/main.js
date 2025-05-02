@@ -79,11 +79,15 @@ function main() {
 window.addEventListener("load", function () {
   const loader = document.getElementById("loader-wrapper");
   if (loader) {
-    loader.style.opacity = "0";
-    loader.style.transition = "opacity 0.5s ease";
-    setTimeout(() => loader.style.display = "none", 500);
+    // Start fading out after the animation ends
+    setTimeout(() => {
+      loader.style.opacity = "0";
+      loader.style.transition = "opacity 0.5s ease";
+      setTimeout(() => loader.style.display = "none", 500);
+    }, 2000); // Match the time of the loader animation (2 seconds)
   }
 });
+
 
 
 main();
