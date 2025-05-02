@@ -27,59 +27,71 @@ var languageData = {
       weekendhours: "Fri-Sun: 11:00 AM - 01:00 AM",
       contacttitle: "Contact Info",
       contactphone: "Phone: 070 870 292",
-      contactemail: "Email: info@pelvec.com",
+      contactemail: "Email: info@pelvec.com"
     },
     mk: {
-        navabout: "За нас",
-        navmenu: "Мени",
-        navgallery: "Галерија",
-        navcontact: "Контакт",
-        abouttitle: "Нашиот Ресторан",
-        abouttext1: "Информации за ресторанот, кога е основан, што нудиме...",
-        aboutsubtitle: "Нешто друго или не",
-        abouttext2: "Некои дополнителни информации за ресторанот, кои се нашите специјални јадења и сл...",
-        menutitle: "Нашето Мени",
-        menutext: "Кликнете подолу за да го погледнете или преземете нашето целосно мени:",
-        menutext2: "Кликнете за да го видите целото мени",
-        gallerytitle: "Галерија",
-        gallerytext: "Погледнете фотографии од нашите јадења",
-        all: "Сите",
-        starters: "Предјадења",
-        maindishes: "Главни Јадења",
-        dessert: "Десерти",
-        reservationtitle: "Сакате да направите резервација? Повикајте <strong><a href='tel:+38970870292'>070 870 292</a></strong>",
-        reservationphone: "070 870 292",
-        addresstitle: "Адреса",
-        street: "Вевчани 6335",
-        country: "Република Северна Македонија",
-        workinghourstitle: "Работно време",
-        weekdayhours: "Втор-Четв: 12:00 AM - 12:00 PM",
-        weekendhours: "Пет-Нед: 11:00 AM - 01:00 AM",
-        contacttitle: "Контакт Инфо",
-        contactphone: "Телефон: 070 870 292",
-        contactemail: "Емаил: info@pelvec.com"
-      }
-};
-
-// Load default language (English)
-var currentLanguage = "en";
-
-// Function to change language
-function setLanguage() {
+      navabout: "За нас",
+      navmenu: "Мени",
+      navgallery: "Галерија",
+      navcontact: "Контакт",
+      abouttitle: "Нашиот Ресторан",
+      abouttext1: "Информации за ресторанот, кога е основан, што нудиме...",
+      aboutsubtitle: "Нешто друго или не",
+      abouttext2: "Некои дополнителни информации за ресторанот, кои се нашите специјални јадења и сл...",
+      menutitle: "Нашето Мени",
+      menutext: "Кликнете подолу за да го погледнете или преземете нашето целосно мени:",
+      menutext2: "Кликнете за да го видите целото мени",
+      gallerytitle: "Галерија",
+      gallerytext: "Погледнете фотографии од нашите јадења",
+      all: "Сите",
+      starters: "Предјадења",
+      maindishes: "Главни Јадења",
+      dessert: "Десерти",
+      reservationtitle: "Сакате да направите резервација? Повикајте <strong><a href='tel:+38970870292'>070 870 292</a></strong>",
+      reservationphone: "070 870 292",
+      addresstitle: "Адреса",
+      street: "Вевчани 6335",
+      country: "Република Северна Македонија",
+      workinghourstitle: "Работно време",
+      weekdayhours: "Втор-Четв: 12:00 AM - 12:00 PM",
+      weekendhours: "Пет-Нед: 11:00 AM - 01:00 AM",
+      contacttitle: "Контакт Инфо",
+      contactphone: "Телефон: 070 870 292",
+      contactemail: "Емаил: info@pelvec.com"
+    }
+  };
+  
+  var currentLanguage = "en";
+  
+  function setLanguage() {
     var lang = document.getElementById("language-selector").value;
     currentLanguage = lang;
     loadLanguage();
-}
-
-// Function to load the language
-function loadLanguage() {
+  }
+  
+  function loadLanguage() {
     var keys = document.querySelectorAll("[data-key]");
     keys.forEach(function (key) {
-        var keyName = key.getAttribute("data-key");
-        if (languageData[currentLanguage][keyName]) {
-            key.innerHTML = languageData[currentLanguage][keyName];
-        }
+      var keyName = key.getAttribute("data-key");
+      if (languageData[currentLanguage][keyName]) {
+        key.innerHTML = languageData[currentLanguage][keyName];
+      }
     });
-}
+  
+    // Update PDF link based on selected language
+    const menuLink = document.getElementById("menu-pdf-link");
+    if (menuLink) {
+      menuLink.href = currentLanguage === "mk" ? "img/menu.pdf" : "img/menuen.pdf";
+    }
+  }
+  
+  // Run once when DOM loads
+  window.addEventListener('DOMContentLoaded', loadLanguage);
 
-loadLanguage();
+  function applyModalLanguage() {
+    const selected = document.getElementById("modal-language-selector").value;
+    document.getElementById("language-selector").value = selected;
+    setLanguage();
+    document.getElementById("language-modal").style.display = "none";
+  }
+  

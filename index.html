@@ -28,6 +28,11 @@
 
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  <div id="loader-wrapper">
+    <div class="loader">
+      <img src="img/minlogo.png" alt="Loading..." />
+    </div>
+  </div>
 
 <!-- Navigation -->
 <nav id="menu" class="navbar navbar-default navbar-fixed-top">
@@ -95,7 +100,7 @@
   <p data-key="menutext">Tap below to view or download our full menu:</p>
 
   <div class="pdf-preview-container">
-    <a href="img/menu.pdf" target="_blank">
+    <a id="menu-pdf-link" href="img/menu.pdf" target="_blank">
       <img src="img/menu-thumbnail.png" alt="Menu Preview" class="pdf-thumbnail">
       <p data-key="menutext2">Click to view full menu</p>
     </a>
@@ -296,6 +301,19 @@
 <script type="text/javascript" src="js/contact_me.js"></script> 
 <script type="text/javascript" src="js/main.js"></script>
 <script src="js/language.js"></script>
+
+<div id="language-modal">
+  <div class="modal-content">
+    <h3>Please select a language</h3>
+    <select id="modal-language-selector">
+      <option value="en">English</option>
+      <option value="mk">Македонски</option>
+    </select>
+    <br />
+    <button onclick="applyModalLanguage()" class="btn-custom">Continue</button>
+  </div>
+</div>
+
 
 </body>
 </html>
