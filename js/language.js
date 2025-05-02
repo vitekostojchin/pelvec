@@ -14,7 +14,7 @@ var languageData = {
       gallerytext: "See pictures from our dishes and ambient.",
       all: "All",
       food: "Food",
-      ambient: "Ambient",
+      ambient: "Ambiance",
       reservationtitle: "Want to make a reservation? Call <strong><a href='tel:+38970870292'>070 870 292</a></strong>",
       reservationphone: "070 870 292",
       addresstitle: "Address",
