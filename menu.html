@@ -2,31 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Select Language</title>
+  <title>Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
-      text-align: center;
-      padding-top: 100px;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: "Georgia", serif;
+      background-color: #f4efe8;
+      color: #2b2b2b;
     }
-    button {
-      font-size: 18px;
-      padding: 10px 20px;
-      margin: 10px;
-      background-color: #cfa549;
+
+    header {
+      background-color: #1e1e1e;
       color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      padding: 20px;
+      text-align: center;
     }
-    button:hover {
-      background-color: #b48e3a;
+
+    .language-switch button {
+      background: #cfa549;
+      border: none;
+      padding: 8px 14px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    .menu-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .menu-group {
+      margin-bottom: 50px;
+    }
+
+    .menu-group h2 {
+      border-bottom: 2px solid #cfa549;
+      padding-bottom: 6px;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    .menu-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .menu-card {
+      background: #fffaf3;
+      border-radius: 10px;
+      padding: 18px 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #cfa549;
     }
   </style>
 </head>
+
 <body>
-  <h2>Select Menu Language</h2>
-  <button onclick="window.location.href='img/menuen.pdf'">English</button>
-  <button onclick="window.location.href='img/menu.pdf'">Македонски</button>
+
+<header>
+  <h1 id="menu-title">Menu</h1>
+  <div class="language-switch">
+    <button onclick="setLanguage('en')">English</button>
+    <button onclick="setLanguage('mk')">Македонски</button>
+  </div>
+</header>
+
+<div id="menu" class="menu-container"></div>
+
+<script>
+  let menuData = {};
+  let currentLanguage = "en";
+
+  async function loadMenu() {
+    const response = await fetch("menu/menu.json");
+    menuData = await response.json();
+    renderMenu();
+  }
+
+  function setLanguage(lang) {
+    currentLanguage = lang;
+    renderMenu();
+  }
+
+  function renderMenu() {
+    const container = document.getElementById("menu");
+    const title = document.getElementById("menu-title");
+
+    container.innerHTML = "";
+    title.textContent = menuData[currentLanguage].title;
+
+    menuData[currentLanguage].categories.forEach(category => {
+      const section = document.createElement("section");
+      section.className = "menu-group";
+
+      const h2 = document.createElement("h2");
+      h2.textContent = category.name;
+
+      const items = document.createElement("div");
+      items.className = "menu-items";
+
+      category.items.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "menu-card";
+
+        card.innerHTML = `
+          <span>${item.name}</span>
+          <span class="price">${item.price}</span>
+        `;
+
+        items.appendChild(card);
+      });
+
+      section.appendChild(h2);
+      section.appendChild(items);
+      container.appendChild(section);
+    });
+  }
+
+  loadMenu();
+</script>
+
 </body>
 </html>
