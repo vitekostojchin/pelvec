@@ -12,7 +12,7 @@
           { "name": "Cabbage salad", "price": "80 den" },
           { "name": "Tuna salad", "price": "200 den" },
           { "name": "Tarator", "price": "180 den" },
-          { "name": "Pickled vegetables", "price": "100 den" },
+          { "name": "Pickled vegetables", "price": "200 den" },
           { "name": "Macedonian salad", "price": "170 den" }
         ]
       },
@@ -107,7 +107,7 @@
       {
         "name": "Strong Drinks",
         "items": [
-          { "name": "Yellow grape brandy", "price": "80 den" },
+          { "name": "Yellow grape brandy", "price": "90 den" },
           { "name": "Clear grape brandy", "price": "80 den" },
           { "name": "Cognac", "price": "80 den" },
           { "name": "Shtok", "price": "100 den" },
@@ -209,7 +209,7 @@
             { "name": "Зелка салата", "price": "80 ден" },
             { "name": "Туна салата", "price": "200 ден" },
             { "name": "Таратор", "price": "180 ден" },
-            { "name": "Туршија", "price": "100 ден" },
+            { "name": "Туршија", "price": "200 ден" },
             { "name": "Македонска салата", "price": "170 ден" }
           ]
         },
@@ -304,7 +304,7 @@
         {
           "name": "Жестоки пијалоци",
           "items": [
-            { "name": "Жолта лозова ракија", "price": "80 ден" },
+            { "name": "Жолта лозова ракија", "price": "90 ден" },
             { "name": "Бела лозова ракија", "price": "80 ден" },
             { "name": "Коњак", "price": "80 ден" },
             { "name": "Шток", "price": "100 ден" },
