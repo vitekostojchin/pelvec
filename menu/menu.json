@@ -20,13 +20,13 @@
         "name": "Starters",
         "items": [
           { "name": "Sheep cheese", "price": "250 den" },
-          { "name": "Grilled beaten cheese", "price": "200 den" },
-          { "name": "Fried yellow cheese", "price": "200 den" },
-          { "name": "Fried beaten cheese", "price": "200 den" },
-          { "name": "Fried cheese wedges", "price": "200 den" },
+          { "name": "Grilled cheese", "price": "200 den" },
+          { "name": "Fried breaded cheese", "price": "200 den" },
+          { "name": "Fried hard dry cheese", "price": "200 den" },
+          { "name": "Fried melted cheese", "price": "200 den" },
           { "name": "Grilled zucchini", "price": "180 den" },
           { "name": "Zucchini with cheese", "price": "220 den" },
-          { "name": "Fried zucchini", "price": "220 den" },
+          { "name": "Crispy zucchini", "price": "220 den" },
           { "name": "Fried onion rings", "price": "150 den" },
           { "name": "Fried pastries", "price": "180 den" },
           { "name": "Grilled mushrooms", "price": "200 den" },
@@ -36,22 +36,22 @@
       {
         "name": "Grill",
         "items": [
-          { "name": "Chicken steak", "price": "260 den" },
-          { "name": "Chicken steak with cheese", "price": "280 den" },
-          { "name": "Stuffed chicken steak", "price": "280 den" },
+          { "name": "Chicken breast", "price": "260 den" },
+          { "name": "Cheesy chicken breast", "price": "280 den" },
+          { "name": "Stuffed chicken breast", "price": "280 den" },
           { "name": "Chicken in curry sauce", "price": "300 den" },
           { "name": "Chicken skewers", "price": "240 den" },
           { "name": "Pork tenderloin", "price": "280 den" },
           { "name": "Stuffed pork tenderloin", "price": "300 den" },
-          { "name": "Viennese schnitzel", "price": "300 den" },
+          { "name": "Wiener schnitzel", "price": "300 den" },
           { "name": "Pork skewers", "price": "250 den" },
           { "name": "Pork ribs", "price": "320 den" },
           { "name": "Homemade sausages", "price": "320 den" },
           { "name": "Burger patty", "price": "250 den" },
-          { "name": "Shar burger", "price": "280 den" },
+          { "name": "Sharska burger", "price": "280 den" },
           { "name": "Stuffed burger", "price": "300 den" },
-          { "name": "Kebabs", "price": "260 den" },
-          { "name": "Shar burger with mushroom sauce", "price": "300 den" },
+          { "name": "Kebapi (ground beef)", "price": "260 den" },
+          { "name": "Sharska burger with mushroom sauce", "price": "300 den" },
           { "name": "Burger with kajmak", "price": "300 den" }
         ]
       },
@@ -60,7 +60,7 @@
         "items": [
           { "name": "Mixed grill for 4 persons", "price": "1550 den" },
           { "name": "Pork with vegetables", "price": "400 den" },
-          { "name": "Vevchani casserole “Pelvec”", "price": "1600 den" }
+          { "name": "Vevchani meat in pot “Pelvec”", "price": "1600 den" }
         ]
       },
       {
@@ -91,8 +91,8 @@
       {
         "name": "Desserts",
         "items": [
-          { "name": "Pancakes (cream/banana/honey & walnuts/jam)", "price": "120 den" },
-          { "name": "Chocolate balls", "price": "140 den" },
+          { "name": "Pancakes (cream & banana / honey & walnuts / jam)", "price": "120 den" },
+          { "name": "Chocolate bombs", "price": "140 den" },
           { "name": "Fruit salad", "price": "120 den" }
         ]
       },
@@ -110,7 +110,7 @@
           { "name": "Yellow grape brandy", "price": "80 den" },
           { "name": "Clear grape brandy", "price": "80 den" },
           { "name": "Cognac", "price": "80 den" },
-          { "name": "Stock", "price": "100 den" },
+          { "name": "Shtok", "price": "100 den" },
           { "name": "Mastika", "price": "90 den" },
           { "name": "Vodka", "price": "80 den" },
           { "name": "Ouzo", "price": "80 den" },
