@@ -2,31 +2,288 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Select Language</title>
+  <title>Menu</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/minlogo.png" type="image/png">
+
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+
     body {
-      text-align: center;
-      padding-top: 100px;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: "Georgia", serif;
+      background-color: #f4efe8;
+      color: #2b2b2b;
     }
-    button {
-      font-size: 18px;
-      padding: 10px 20px;
-      margin: 10px;
-      background-color: #cfa549;
+
+    /* NAVBAR */
+    header {
+      background-color: #1e1e1e;
       color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    button:hover {
-      background-color: #b48e3a;
+
+    .navbar-brand {
+      font-family: 'Alex Brush', cursive;
+      font-size: 32px;
+      color: #cfa549;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+
+    /* LINK STYLE LANGUAGE BUTTON */
+    .lang-btn {
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      color: #cfa549;
+      text-decoration: underline;
+    }
+
+    .lang-btn:hover {
+      color: #b48e3a;
+    }
+
+    .menu-container {
+      max-width: 1000px;
+      margin: 25px auto;
+      padding: 0 16px;
+    }
+
+    /* CATEGORY TITLE */
+    .menu-group {
+      margin-bottom: 25px;
+    }
+
+    .menu-title-line {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      gap: 12px;
+      user-select: none;
+    }
+
+    .menu-title-line h2 {
+      margin: 0;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 20px;
+    }
+
+    .menu-title-line::after {
+      content: "";
+      flex: 1;
+      height: 2px;
+      background-color: #cfa549;
+    }
+
+    /* chevron indicator */
+    .chevron {
+      margin-left: auto;
+      transition: transform 0.3s ease;
+      font-size: 18px;
+      color: #cfa549;
+    }
+
+    .menu-group.open .chevron {
+      transform: rotate(180deg);
+    }
+
+    /* ITEMS */
+    .menu-items {
+      display: none;
+      margin-top: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .menu-group.open .menu-items {
+      display: grid;
+    }
+
+    .menu-card {
+      background: #fffaf3;
+      border-radius: 10px;
+      padding: 14px 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #cfa549;
+      white-space: nowrap;
+    }
+
+    /* LANGUAGE MODAL */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: #fffaf3;
+      padding: 22px 24px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      width: 90%;
+      max-width: 360px;
+    }
+
+    .modal-content h2 {
+      margin-bottom: 18px;
+      font-size: 18px;
+    }
+
+    .modal-content button {
+      background: #cfa549;
+      border: none;
+      padding: 12px 22px;
+      margin: 10px 0;
+      width: 100%;
+      cursor: pointer;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .modal-content button:hover {
+      background: #b48e3a;
+    }
+
+    /* RESPONSIVE MEDIA QUERIES */
+    @media (max-width: 600px) {
+      .navbar-brand {
+        font-size: 28px;
+      }
+
+      .menu-container {
+        margin: 18px auto;
+        padding: 0 12px;
+      }
+
+      .menu-title-line h2 {
+        font-size: 18px;
+      }
+
+      .menu-card {
+        padding: 12px 14px;
+      }
+
+      .menu-items {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
-  <h2>Select Menu Language</h2>
-  <button onclick="window.location.href='img/menuen.pdf'">English</button>
-  <button onclick="window.location.href='img/menu.pdf'">Македонски</button>
+
+<header>
+  <a class="navbar-brand page-scroll" href="#page-top" data-key="brand-name">Pelvec</a>
+  <button class="lang-btn" onclick="openLanguageModal()">Select Language</button>
+</header>
+
+<h1 id="menu-title" style="display:none;"></h1>
+
+<!-- LANGUAGE MODAL -->
+<div id="languageModal" class="modal">
+  <div class="modal-content">
+    <h2>Select Language</h2>
+    <button onclick="chooseLanguage('en')">English</button>
+    <button onclick="chooseLanguage('mk')">Македонски</button>
+  </div>
+</div>
+
+<div id="menu" class="menu-container"></div>
+
+<script>
+  let menuData = {};
+  let currentLanguage = null;
+
+  async function loadMenu() {
+    const response = await fetch("menu/menu.json");
+    menuData = await response.json();
+  }
+
+  function openLanguageModal() {
+    document.getElementById("languageModal").style.display = "flex";
+  }
+
+  function chooseLanguage(lang) {
+    currentLanguage = lang;
+    document.getElementById("languageModal").style.display = "none";
+    renderMenu();
+  }
+
+  function toggleCategory(section) {
+    section.classList.toggle("open");
+  }
+
+  function renderMenu() {
+    const container = document.getElementById("menu");
+    const title = document.getElementById("menu-title");
+
+    container.innerHTML = "";
+    title.textContent = menuData[currentLanguage].title;
+
+    menuData[currentLanguage].categories.forEach((category, index) => {
+      const section = document.createElement("section");
+      section.className = "menu-group";
+
+      if (index === 0) section.classList.add("open");
+
+      const titleLine = document.createElement("div");
+      titleLine.className = "menu-title-line";
+      titleLine.onclick = () => toggleCategory(section);
+
+      const h2 = document.createElement("h2");
+      h2.textContent = category.name;
+
+      const chevron = document.createElement("span");
+      chevron.className = "chevron";
+      chevron.innerHTML = "▾";
+
+      titleLine.appendChild(h2);
+      titleLine.appendChild(chevron);
+
+      const items = document.createElement("div");
+      items.className = "menu-items";
+
+      category.items.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "menu-card";
+        card.innerHTML = `
+          <span>${item.name}</span>
+          <span class="price">${item.price}</span>
+        `;
+        items.appendChild(card);
+      });
+
+      section.appendChild(titleLine);
+      section.appendChild(items);
+      container.appendChild(section);
+    });
+  }
+
+  loadMenu();
+</script>
+
 </body>
 </html>

@@ -77,7 +77,7 @@ var languageData = {
     // Update PDF link based on selected language
     const menuLink = document.getElementById("menu-pdf-link");
     if (menuLink) {
-      menuLink.href = currentLanguage === "mk" ? "img/menu.pdf" : "img/menuen.pdf";
+      menuLink.href = currentLanguage === "mk" ? "menu.html" : "menu.html";
     }
   }
   

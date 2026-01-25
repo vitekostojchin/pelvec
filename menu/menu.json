@@ -1,0 +1,394 @@
+{
+    "en": {
+    "title": "Menu",
+    "categories": [
+      {
+        "name": "Salads",
+        "items": [
+          { "name": "Mixed salad", "price": "140 den" },
+          { "name": "Shopska salad", "price": "160 den" },
+          { "name": "Greek salad", "price": "170 den" },
+          { "name": "Caesar salad", "price": "220 den" },
+          { "name": "Cabbage salad", "price": "80 den" },
+          { "name": "Tuna salad", "price": "200 den" },
+          { "name": "Tarator", "price": "180 den" },
+          { "name": "Pickled vegetables", "price": "100 den" },
+          { "name": "Macedonian salad", "price": "170 den" }
+        ]
+      },
+      {
+        "name": "Starters",
+        "items": [
+          { "name": "Sheep cheese", "price": "250 den" },
+          { "name": "Grilled cheese", "price": "200 den" },
+          { "name": "Fried breaded cheese", "price": "200 den" },
+          { "name": "Fried hard dry cheese", "price": "200 den" },
+          { "name": "Fried melted cheese", "price": "200 den" },
+          { "name": "Grilled zucchini", "price": "180 den" },
+          { "name": "Zucchini with cheese", "price": "220 den" },
+          { "name": "Crispy zucchini", "price": "220 den" },
+          { "name": "Fried onion rings", "price": "150 den" },
+          { "name": "Fried pastries", "price": "180 den" },
+          { "name": "Grilled mushrooms", "price": "200 den" },
+          { "name": "Rolled pastry (Vitkalnik)", "price": "150 den" }
+        ]
+      },
+      {
+        "name": "Grill",
+        "items": [
+          { "name": "Chicken breast", "price": "260 den" },
+          { "name": "Cheesy chicken breast", "price": "280 den" },
+          { "name": "Stuffed chicken breast", "price": "280 den" },
+          { "name": "Chicken in curry sauce", "price": "300 den" },
+          { "name": "Chicken skewers", "price": "240 den" },
+          { "name": "Pork tenderloin", "price": "280 den" },
+          { "name": "Stuffed pork tenderloin", "price": "300 den" },
+          { "name": "Wiener schnitzel", "price": "300 den" },
+          { "name": "Pork skewers", "price": "250 den" },
+          { "name": "Pork ribs", "price": "320 den" },
+          { "name": "Homemade sausages", "price": "320 den" },
+          { "name": "Burger patty", "price": "250 den" },
+          { "name": "Sharska burger", "price": "280 den" },
+          { "name": "Stuffed burger", "price": "300 den" },
+          { "name": "Kebapi (ground beef)", "price": "260 den" },
+          { "name": "Sharska burger with mushroom sauce", "price": "300 den" },
+          { "name": "Burger with kajmak", "price": "300 den" }
+        ]
+      },
+      {
+        "name": "Specialties",
+        "items": [
+          { "name": "Mixed grill for 4 persons", "price": "1550 den" },
+          { "name": "Pork with vegetables", "price": "400 den" },
+          { "name": "Vevchani meat in pot “Pelvec”", "price": "1600 den" }
+        ]
+      },
+      {
+        "name": "Side Dishes",
+        "items": [
+          { "name": "French fries", "price": "100 den" },
+          { "name": "French fries with cheese", "price": "110 den" },
+          { "name": "Baked potatoes", "price": "120 den" },
+          { "name": "Garlic dip", "price": "80 den" },
+          { "name": "Cream dip", "price": "80 den" },
+          { "name": "Hot pepper", "price": "20 den" },
+          { "name": "Ajvar", "price": "150 den" },
+          { "name": "Pindjur", "price": "150 den" },
+          { "name": "Flatbread with cheese", "price": "50 den" },
+          { "name": "Kajmak", "price": "60 den" }
+        ]
+      },
+      {
+        "name": "Meze",
+        "items": [
+          { "name": "Chicken fingers", "price": "230 den" },
+          { "name": "Chicken sticks", "price": "230 den" },
+          { "name": "Potato chips", "price": "120 den" },
+          { "name": "Meat balls", "price": "250 den" },
+          { "name": "Fried platter for 4 persons", "price": "1200 den" }
+        ]
+      },
+      {
+        "name": "Desserts",
+        "items": [
+          { "name": "Pancakes (cream & banana / honey & walnuts / jam)", "price": "120 den" },
+          { "name": "Chocolate bombs", "price": "140 den" },
+          { "name": "Fruit salad", "price": "120 den" }
+        ]
+      },
+      {
+        "name": "Appetizers",
+        "items": [
+          { "name": "Peanuts", "price": "80 den" },
+          { "name": "Almonds", "price": "150 den" },
+          { "name": "Hazelnuts", "price": "150 den" }
+        ]
+      },
+      {
+        "name": "Strong Drinks",
+        "items": [
+          { "name": "Yellow grape brandy", "price": "80 den" },
+          { "name": "Clear grape brandy", "price": "80 den" },
+          { "name": "Cognac", "price": "80 den" },
+          { "name": "Shtok", "price": "100 den" },
+          { "name": "Mastika", "price": "90 den" },
+          { "name": "Vodka", "price": "80 den" },
+          { "name": "Ouzo", "price": "80 den" },
+          { "name": "Gin", "price": "80 den" },
+          { "name": "Pelinkovac", "price": "80 den" },
+          { "name": "Whiskey", "price": "150 den" },
+          { "name": "Apple brandy", "price": "100 den" },
+          { "name": "Plum brandy", "price": "100 den" }
+        ]
+      },
+      {
+        "name": "Beer",
+        "items": [
+          { "name": "Skopsko", "price": "100 den" },
+          { "name": "Skopsko Smooth", "price": "100 den" },
+          { "name": "Zlaten Dab", "price": "100 den" },
+          { "name": "Krali Marko", "price": "90 den" },
+          { "name": "Tuborg", "price": "120 den" },
+          { "name": "Heineken", "price": "110 den" },
+          { "name": "Amstel", "price": "120 den" }
+        ]
+      },
+      {
+        "name": "White Wines",
+        "items": [
+          { "name": "Alexandria 0.2", "price": "200 den" },
+          { "name": "Temjanika 0.2", "price": "200 den" },
+          { "name": "Traminer 0.2", "price": "200 den" },
+          { "name": "Alexandria 0.7", "price": "800 den" },
+          { "name": "Temjanika 0.7", "price": "800 den" },
+          { "name": "Traminer 0.7", "price": "800 den" },
+          { "name": "House white wine 1L", "price": "500 den" },
+          { "name": "Smederevka 1L", "price": "400 den" },
+          { "name": "MONTECO Temjanika 0.7", "price": "1100 den" },
+          { "name": "MONTECO Chardonnay 0.7", "price": "1100 den" }
+        ]
+      },
+      {
+        "name": "Red Wines",
+        "items": [
+          { "name": "Alexandria 0.2", "price": "200 den" },
+          { "name": "T’ga for South 0.2", "price": "200 den" },
+          { "name": "Alexandria 0.7", "price": "800 den" },
+          { "name": "T’ga for South 0.7", "price": "800 den" },
+          { "name": "House red wine 1L", "price": "500 den" }
+        ]
+      },
+      {
+        "name": "Rosé Wines",
+        "items": [
+          { "name": "Alexandria 0.2", "price": "200 den" },
+          { "name": "Alexandria 0.7", "price": "800 den" },
+          { "name": "Rosé 1L", "price": "400 den" }
+        ]
+      },
+      {
+        "name": "Soft Drinks",
+        "items": [
+          { "name": "Coca-Cola", "price": "90 den" },
+          { "name": "Fanta", "price": "90 den" },
+          { "name": "Sprite", "price": "90 den" },
+          { "name": "Schweppes", "price": "90 den" },
+          { "name": "Tonic", "price": "90 den" },
+          { "name": "Fruit juices", "price": "90 den" },
+          { "name": "Still water", "price": "70 den" },
+          { "name": "Sparkling water", "price": "70 den" },
+          { "name": "Still water 0.7", "price": "100 den" },
+          { "name": "Sparkling water 0.7", "price": "100 den" }
+        ]
+      },
+      {
+        "name": "Hot Beverages",
+        "items": [
+          { "name": "Espresso", "price": "50 den" },
+          { "name": "Macchiato", "price": "50 den" },
+          { "name": "Nescafe", "price": "90 den" },
+          { "name": "Cappuccino", "price": "90 den" },
+          { "name": "Turkish coffee", "price": "40 den" },
+          { "name": "Tea", "price": "40 den" }
+        ]
+      }
+    ]
+  },
+
+    
+    "mk": {
+      "title": "Мени",
+      "categories": [
+        {
+          "name": "Салати",
+          "items": [
+            { "name": "Мешана салата", "price": "140 ден" },
+            { "name": "Шопска салата", "price": "160 ден" },
+            { "name": "Грчка салата", "price": "170 ден" },
+            { "name": "Цезар салата", "price": "220 ден" },
+            { "name": "Зелка салата", "price": "80 ден" },
+            { "name": "Туна салата", "price": "200 ден" },
+            { "name": "Таратор", "price": "180 ден" },
+            { "name": "Туршија", "price": "100 ден" },
+            { "name": "Македонска салата", "price": "170 ден" }
+          ]
+        },
+        {
+          "name": "Предјадења",
+          "items": [
+            { "name": "Овчо сирење", "price": "250 ден" },
+            { "name": "Биено сирење на скара", "price": "200 ден" },
+            { "name": "Похован кашкавал", "price": "200 ден" },
+            { "name": "Поховано биено сирење", "price": "200 ден" },
+            { "name": "Поховани зденки", "price": "200 ден" },
+            { "name": "Тиквички на скара", "price": "180 ден" },
+            { "name": "Тиквички со кашкавал", "price": "220 ден" },
+            { "name": "Поховани тиквички", "price": "220 ден" },
+            { "name": "Похован кромид", "price": "150 ден" },
+            { "name": "Поховани пирошки", "price": "180 ден" },
+            { "name": "Печурки на скара", "price": "200 ден" },
+            { "name": "Виткалник", "price": "150 ден" }
+          ]
+        },
+        {
+          "name": "Скара",
+          "items": [
+            { "name": "Пилешки стек", "price": "260 ден" },
+            { "name": "Пилешки стек со зденка", "price": "280 ден" },
+            { "name": "Полнет пилешки стек", "price": "280 ден" },
+            { "name": "Пилешко во кари сос", "price": "300 ден" },
+            { "name": "Пилешки ражничи", "price": "240 ден" },
+            { "name": "Вешалица", "price": "280 ден" },
+            { "name": "Полнета вешалица", "price": "300 ден" },
+            { "name": "Бечка шницла", "price": "300 ден" },
+            { "name": "Свински ражничи", "price": "250 ден" },
+            { "name": "Свинско ребро", "price": "320 ден" },
+            { "name": "Домашни колбасици", "price": "320 ден" },
+            { "name": "Плескавица", "price": "250 ден" },
+            { "name": "Шарска плескавица", "price": "280 ден" },
+            { "name": "Полнета плескавица", "price": "300 ден" },
+            { "name": "Ќебапи", "price": "260 ден" },
+            { "name": "Шарска со сос од печурки", "price": "300 ден" },
+            { "name": "Плескавица со кајмак", "price": "300 ден" }
+          ]
+        },
+        {
+          "name": "Специјалитети",
+          "items": [
+            { "name": "Мешана скара за 4 лица", "price": "1550 ден" },
+            { "name": "Свинско месо со зеленчук", "price": "400 ден" },
+            { "name": "Вевчанска тава „Пелвец“", "price": "1600 ден" }
+          ]
+        },
+        {
+          "name": "Прилози",
+          "items": [
+            { "name": "Помфрит", "price": "100 ден" },
+            { "name": "Помфрит со сирење", "price": "110 ден" },
+            { "name": "Пекарски компир", "price": "120 ден" },
+            { "name": "Макало со лук", "price": "80 ден" },
+            { "name": "Макало со павлака", "price": "80 ден" },
+            { "name": "Луто пиперче", "price": "20 ден" },
+            { "name": "Ајвар", "price": "150 ден" },
+            { "name": "Пинџур", "price": "150 ден" },
+            { "name": "Нафора со сирење", "price": "50 ден" },
+            { "name": "Кајмак", "price": "60 ден" }
+          ]
+        },
+        {
+          "name": "Мезе",
+          "items": [
+            { "name": "Пилешки прсти", "price": "230 ден" },
+            { "name": "Пилешки стапчиња", "price": "230 ден" },
+            { "name": "Чипс од компир", "price": "120 ден" },
+            { "name": "Бомбици со мелено месо", "price": "250 ден" },
+            { "name": "Похована даска за 4 лица", "price": "1200 ден" }
+          ]
+        },
+        {
+          "name": "Десерти",
+          "items": [
+            { "name": "Палачинки (крем/банана/мед и ореви/џем)", "price": "120 ден" },
+            { "name": "Чоколадни бомбици", "price": "140 ден" },
+            { "name": "Овошна салата", "price": "120 ден" }
+          ]
+        },
+        {
+          "name": "Апетисани",
+          "items": [
+            { "name": "Кикирики", "price": "80 ден" },
+            { "name": "Бадеми", "price": "150 ден" },
+            { "name": "Лешник", "price": "150 ден" }
+          ]
+        },
+        {
+          "name": "Жестоки пијалоци",
+          "items": [
+            { "name": "Жолта лозова ракија", "price": "80 ден" },
+            { "name": "Бела лозова ракија", "price": "80 ден" },
+            { "name": "Коњак", "price": "80 ден" },
+            { "name": "Шток", "price": "100 ден" },
+            { "name": "Мастика", "price": "90 ден" },
+            { "name": "Водка", "price": "80 ден" },
+            { "name": "Узо", "price": "80 ден" },
+            { "name": "Џин", "price": "80 ден" },
+            { "name": "Пелинковец", "price": "80 ден" },
+            { "name": "Виски", "price": "150 ден" },
+            { "name": "Јаболкова ракија", "price": "100 ден" },
+            { "name": "Сливова ракија", "price": "100 ден" }
+          ]
+        },
+        {
+          "name": "Пиво",
+          "items": [
+            { "name": "Скопско", "price": "100 ден" },
+            { "name": "Скопско Смут", "price": "100 ден" },
+            { "name": "Златен Даб", "price": "100 ден" },
+            { "name": "Крали Марко", "price": "90 ден" },
+            { "name": "Туборг", "price": "120 ден" },
+            { "name": "Хајнекен", "price": "110 ден" },
+            { "name": "Амстел", "price": "120 ден" }
+          ]
+        },
+        {
+          "name": "Бели Вина",
+          "items": [
+            { "name": "Александрија 0.2", "price": "200 ден" },
+            { "name": "Темјаника 0.2", "price": "200 ден" },
+            { "name": "Траминец 0.2", "price": "200 ден" },
+            { "name": "Александрија 0.7", "price": "800 ден" },
+            { "name": "Темјаника 0.7", "price": "800 ден" },
+            { "name": "Траминец 0.7", "price": "800 ден" },
+            { "name": "Домашно бело вино 1л", "price": "500 ден" },
+            { "name": "Смедеревка 1л", "price": "400 ден" },
+            { "name": "МОНТЕКО Темјаника 0.7", "price": "1100 ден" },
+            { "name": "МОНТЕКО Шардоне 0.7", "price": "1100 ден" }
+          ]
+        },
+        {
+          "name": "Црвени Вина",
+          "items": [
+            { "name": "Александрија 0.2", "price": "200 ден" },
+            { "name": "Т'га за југ 0.2", "price": "200 ден" },
+            { "name": "Александрија 0.7", "price": "800 ден" },
+            { "name": "Т'га за југ 0.7", "price": "800 ден" },
+            { "name": "Домашно црвено вино 1л", "price": "500 ден" }
+          ]
+        },
+        {
+          "name": "Розе Вина",
+          "items": [
+            { "name": "Александрија 0.2", "price": "200 ден" },
+            { "name": "Александрија 0.7", "price": "800 ден" },
+            { "name": "Розе 1л", "price": "400 ден" }
+          ]
+        },
+        {
+          "name": "Безалкохолни пијалоци",
+          "items": [
+            { "name": "Кока Кола", "price": "90 ден" },
+            { "name": "Фанта", "price": "90 ден" },
+            { "name": "Спрајт", "price": "90 ден" },
+            { "name": "Швепс", "price": "90 ден" },
+            { "name": "Тоник", "price": "90 ден" },
+            { "name": "Овошни сокови", "price": "90 ден" },
+            { "name": "Негазирана вода", "price": "70 ден" },
+            { "name": "Газирана вода", "price": "70 ден" },
+            { "name": "Негазирана вода 0.7", "price": "100 ден" },
+            { "name": "Газирана вода 0.7", "price": "100 ден" }
+          ]
+        },
+        {
+          "name": "Топли напитоци",
+          "items": [
+            { "name": "Еспресо", "price": "50 ден" },
+            { "name": "Макијато", "price": "50 ден" },
+            { "name": "Нескафе", "price": "90 ден" },
+            { "name": "Капучино", "price": "90 ден" },
+            { "name": "Турско кафе", "price": "40 ден" },
+            { "name": "Чај", "price": "40 ден" }
+          ]
+        }
+      ]
+    }
+}
