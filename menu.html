@@ -2,288 +2,382 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Menu</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Pelvec</title>
   <link rel="icon" href="img/minlogo.png" type="image/png">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+    /* ── Variables ─────────────────────────────────────────── */
+    :root {
+      --bg:          #0f0e0c;
+      --bg-2:        #161412;
+      --bg-3:        #1e1c19;
+      --gold:        #cfa549;
+      --gold-light:  #e8c47a;
+      --gold-dim:    rgba(207, 165, 73, 0.10);
+      --gold-border: rgba(207, 165, 73, 0.22);
+      --text:        #f0ebe2;
+      --text-muted:  #8a8278;
+      --text-dim:    #55504a;
+      --radius:      4px;
+      --ease:        cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ── Reset ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      margin: 0;
-      font-family: "Georgia", serif;
-      background-color: #f4efe8;
-      color: #2b2b2b;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
     }
 
-    /* NAVBAR */
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold-light); }
+
+    /* ── Header ────────────────────────────────────────────── */
     header {
-      background-color: #1e1e1e;
-      color: white;
-      padding: 14px 16px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 14, 12, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--gold-border);
+      height: 64px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-    }
-
-    .navbar-brand {
-      font-family: 'Alex Brush', cursive;
-      font-size: 32px;
-      color: #cfa549;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-decoration: none;
-    }
-
-    /* LINK STYLE LANGUAGE BUTTON */
-    .lang-btn {
-      background: transparent;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      font-size: 14px;
-      font-weight: bold;
-      color: #cfa549;
-      text-decoration: underline;
-    }
-
-    .lang-btn:hover {
-      color: #b48e3a;
-    }
-
-    .menu-container {
-      max-width: 1000px;
-      margin: 25px auto;
-      padding: 0 16px;
-    }
-
-    /* CATEGORY TITLE */
-    .menu-group {
-      margin-bottom: 25px;
-    }
-
-    .menu-title-line {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      gap: 12px;
-      user-select: none;
-    }
-
-    .menu-title-line h2 {
-      margin: 0;
-      white-space: nowrap;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 20px;
-    }
-
-    .menu-title-line::after {
-      content: "";
-      flex: 1;
-      height: 2px;
-      background-color: #cfa549;
-    }
-
-    /* chevron indicator */
-    .chevron {
-      margin-left: auto;
-      transition: transform 0.3s ease;
-      font-size: 18px;
-      color: #cfa549;
-    }
-
-    .menu-group.open .chevron {
-      transform: rotate(180deg);
-    }
-
-    /* ITEMS */
-    .menu-items {
-      display: none;
-      margin-top: 18px;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      padding: 0 28px;
       gap: 16px;
     }
 
-    .menu-group.open .menu-items {
-      display: grid;
+    .back-link {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.25s var(--ease);
+      white-space: nowrap;
+    }
+    .back-link:hover { color: var(--gold); }
+    .back-link::before { content: '←'; font-size: 14px; }
+
+    .header-logo {
+      font-family: 'Alex Brush', cursive;
+      font-size: 32px;
+      color: var(--gold);
+      line-height: 1;
+      flex: 1;
+      text-align: center;
+    }
+    .header-logo:hover { color: var(--gold-light); }
+
+    .lang-btn {
+      background: transparent;
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius);
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 12px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.25s var(--ease);
+    }
+    .lang-btn:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── Page title ─────────────────────────────────────────── */
+    #menu-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 400;
+      color: var(--text);
+      text-align: center;
+      padding: 48px 24px 8px;
+      letter-spacing: 1px;
     }
 
+    .menu-subtitle {
+      text-align: center;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding-bottom: 40px;
+    }
+
+    /* ── Menu container ─────────────────────────────────────── */
+    #menu {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    /* ── Category group ─────────────────────────────────────── */
+    .menu-group {
+      border: 1px solid var(--gold-border);
+      border-radius: 8px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: border-color 0.25s var(--ease);
+    }
+    .menu-group:hover { border-color: rgba(207, 165, 73, 0.4); }
+
+    /* ── Category header (clickable) ────────────────────────── */
+    .menu-title-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 24px;
+      cursor: pointer;
+      user-select: none;
+      background: var(--bg-2);
+      transition: background 0.25s var(--ease);
+      gap: 16px;
+    }
+    .menu-title-line:hover { background: var(--bg-3); }
+
+    .menu-title-line h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 0;
+    }
+
+    .chevron {
+      font-size: 18px;
+      color: var(--text-dim);
+      transition: transform 0.3s var(--ease);
+      line-height: 1;
+    }
+    .menu-group.open .chevron { transform: rotate(180deg); }
+
+    /* ── Items grid ─────────────────────────────────────────── */
+    .menu-items {
+      display: none;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1px;
+      background: var(--gold-border);
+    }
+    .menu-group.open .menu-items { display: grid; }
+
     .menu-card {
-      background: #fffaf3;
-      border-radius: 10px;
-      padding: 14px 16px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      background: var(--bg);
+      padding: 16px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 12px;
+      transition: background 0.2s var(--ease);
+    }
+    .menu-card:hover { background: var(--bg-2); }
+
+    .menu-card span:first-child {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.4;
     }
 
     .price {
-      font-weight: bold;
-      color: #cfa549;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--gold);
       white-space: nowrap;
+      flex-shrink: 0;
     }
 
-    /* LANGUAGE MODAL */
+    /* ── Language modal ─────────────────────────────────────── */
     .modal {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.7);
+      background: rgba(10, 9, 8, 0.9);
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 999;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
+    .modal.hidden { display: none; }
 
     .modal-content {
-      background: #fffaf3;
-      padding: 22px 24px;
-      border-radius: 12px;
+      background: var(--bg-2);
+      border: 1px solid var(--gold-border);
+      border-radius: 8px;
+      padding: 48px 40px;
       text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      max-width: 340px;
       width: 90%;
-      max-width: 360px;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+    }
+
+    .modal-logo {
+      font-family: 'Alex Brush', cursive;
+      font-size: 56px;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 12px;
     }
 
     .modal-content h2 {
-      margin-bottom: 18px;
-      font-size: 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      margin-bottom: 28px;
     }
 
     .modal-content button {
-      background: #cfa549;
-      border: none;
-      padding: 12px 22px;
-      margin: 10px 0;
+      display: block;
       width: 100%;
+      padding: 13px 24px;
+      margin-bottom: 10px;
+      background: transparent;
+      border: 1px solid var(--gold-border);
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border-radius: var(--radius);
       cursor: pointer;
-      border-radius: 6px;
-      font-size: 16px;
-      font-weight: bold;
+      transition: all 0.25s var(--ease);
     }
-
     .modal-content button:hover {
-      background: #b48e3a;
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--bg);
     }
 
-    /* RESPONSIVE MEDIA QUERIES */
+    /* ── Responsive ─────────────────────────────────────────── */
     @media (max-width: 600px) {
-      .navbar-brand {
-        font-size: 28px;
-      }
+      header { padding: 0 16px; }
+      .back-link span { display: none; }
 
-      .menu-container {
-        margin: 18px auto;
-        padding: 0 12px;
-      }
+      #menu-title { padding-top: 36px; }
 
-      .menu-title-line h2 {
-        font-size: 18px;
-      }
+      .menu-title-line { padding: 16px 18px; }
 
-      .menu-card {
-        padding: 12px 14px;
-      }
+      .menu-items { grid-template-columns: 1fr; }
 
-      .menu-items {
-        grid-template-columns: 1fr;
-      }
+      .menu-card { padding: 14px 18px; }
+
+      .modal-content { padding: 36px 24px; }
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <a class="navbar-brand page-scroll" href="#page-top" data-key="brand-name">Pelvec</a>
-  <button class="lang-btn" onclick="openLanguageModal()">Select Language</button>
-</header>
+  <header>
+    <a class="back-link" href="index.html"><span>Home</span></a>
+    <a class="header-logo" href="index.html">Pelvec</a>
+    <button class="lang-btn" onclick="openLanguageModal()">Language</button>
+  </header>
 
-<h1 id="menu-title" style="display:none;"></h1>
+  <h1 id="menu-title"></h1>
+  <p class="menu-subtitle" id="menu-subtitle">— Pelvec, Vevchani —</p>
 
-<!-- LANGUAGE MODAL -->
-<div id="languageModal" class="modal">
-  <div class="modal-content">
-    <h2>Select Language</h2>
-    <button onclick="chooseLanguage('en')">English</button>
-    <button onclick="chooseLanguage('mk')">Македонски</button>
+  <!-- Language Modal -->
+  <div id="languageModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-logo">Pelvec</div>
+      <h2>Select Language</h2>
+      <button onclick="chooseLanguage('en')">English</button>
+      <button onclick="chooseLanguage('mk')">Македонски</button>
+    </div>
   </div>
-</div>
 
-<div id="menu" class="menu-container"></div>
+  <div id="menu"></div>
 
-<script>
-  let menuData = {};
-  let currentLanguage = null;
+  <script>
+    // Menu data is inlined here so the page works when opened directly
+    // as a local file (file:// protocol) without needing a server.
+    const menuData = {"en":{"title":"Menu","categories":[{"name":"Salads","items":[{"name":"Mixed salad","price":"140 den"},{"name":"Shopska salad","price":"160 den"},{"name":"Greek salad","price":"170 den"},{"name":"Caesar salad","price":"220 den"},{"name":"Cabbage salad","price":"80 den"},{"name":"Tuna salad","price":"200 den"},{"name":"Tarator","price":"180 den"},{"name":"Pickled vegetables","price":"200 den"},{"name":"Macedonian salad","price":"170 den"}]},{"name":"Starters","items":[{"name":"Sheep cheese","price":"250 den"},{"name":"Grilled cheese","price":"200 den"},{"name":"Fried breaded cheese","price":"200 den"},{"name":"Fried hard dry cheese","price":"200 den"},{"name":"Fried melted cheese","price":"200 den"},{"name":"Grilled zucchini","price":"180 den"},{"name":"Zucchini with cheese","price":"220 den"},{"name":"Crispy zucchini","price":"220 den"},{"name":"Fried onion rings","price":"150 den"},{"name":"Fried pastries","price":"180 den"},{"name":"Grilled mushrooms","price":"200 den"},{"name":"Rolled pastry (Vitkalnik)","price":"150 den"}]},{"name":"Grill","items":[{"name":"Chicken breast","price":"260 den"},{"name":"Cheesy chicken breast","price":"280 den"},{"name":"Stuffed chicken breast","price":"280 den"},{"name":"Chicken in curry sauce","price":"300 den"},{"name":"Chicken skewers","price":"240 den"},{"name":"Pork tenderloin","price":"280 den"},{"name":"Stuffed pork tenderloin","price":"300 den"},{"name":"Wiener schnitzel","price":"300 den"},{"name":"Pork skewers","price":"250 den"},{"name":"Pork ribs","price":"320 den"},{"name":"Homemade sausages","price":"320 den"},{"name":"Burger patty","price":"250 den"},{"name":"Sharska burger","price":"280 den"},{"name":"Stuffed burger","price":"300 den"},{"name":"Kebapi (ground beef)","price":"260 den"},{"name":"Sharska burger with mushroom sauce","price":"300 den"},{"name":"Burger with kajmak","price":"300 den"}]},{"name":"Specialties","items":[{"name":"Mixed grill for 4 persons","price":"1550 den"},{"name":"Pork with vegetables","price":"400 den"},{"name":"Vevchani meat in pot \u201cPelvec\u201d","price":"1600 den"}]},{"name":"Side Dishes","items":[{"name":"French fries","price":"100 den"},{"name":"French fries with cheese","price":"110 den"},{"name":"Baked potatoes","price":"120 den"},{"name":"Garlic dip","price":"80 den"},{"name":"Cream dip","price":"80 den"},{"name":"Hot pepper","price":"20 den"},{"name":"Ajvar","price":"150 den"},{"name":"Pindjur","price":"150 den"},{"name":"Flatbread with cheese","price":"50 den"},{"name":"Kajmak","price":"60 den"}]},{"name":"Meze","items":[{"name":"Chicken fingers","price":"230 den"},{"name":"Chicken sticks","price":"230 den"},{"name":"Potato chips","price":"120 den"},{"name":"Meat balls","price":"250 den"},{"name":"Fried platter for 4 persons","price":"1200 den"}]},{"name":"Desserts","items":[{"name":"Pancakes (cream & banana / honey & walnuts / jam)","price":"120 den"},{"name":"Chocolate bombs","price":"140 den"},{"name":"Fruit salad","price":"120 den"}]},{"name":"Appetizers","items":[{"name":"Peanuts","price":"80 den"},{"name":"Almonds","price":"150 den"},{"name":"Hazelnuts","price":"150 den"}]},{"name":"Strong Drinks","items":[{"name":"Yellow grape brandy","price":"90 den"},{"name":"Clear grape brandy","price":"80 den"},{"name":"Cognac","price":"80 den"},{"name":"Shtok","price":"100 den"},{"name":"Mastika","price":"90 den"},{"name":"Vodka","price":"80 den"},{"name":"Ouzo","price":"80 den"},{"name":"Gin","price":"80 den"},{"name":"Pelinkovac","price":"80 den"},{"name":"Whiskey","price":"150 den"},{"name":"Apple brandy","price":"100 den"},{"name":"Plum brandy","price":"100 den"}]},{"name":"Beer","items":[{"name":"Skopsko","price":"100 den"},{"name":"Skopsko Smooth","price":"100 den"},{"name":"Zlaten Dab","price":"100 den"},{"name":"Krali Marko","price":"90 den"},{"name":"Tuborg","price":"120 den"},{"name":"Heineken","price":"110 den"},{"name":"Amstel","price":"120 den"}]},{"name":"White Wines","items":[{"name":"Alexandria 0.2","price":"200 den"},{"name":"Temjanika 0.2","price":"200 den"},{"name":"Traminer 0.2","price":"200 den"},{"name":"Alexandria 0.7","price":"800 den"},{"name":"Temjanika 0.7","price":"800 den"},{"name":"Traminer 0.7","price":"800 den"},{"name":"House white wine 1L","price":"500 den"},{"name":"Smederevka 1L","price":"400 den"},{"name":"MONTECO Temjanika 0.7","price":"1100 den"},{"name":"MONTECO Chardonnay 0.7","price":"1100 den"}]},{"name":"Red Wines","items":[{"name":"Alexandria 0.2","price":"200 den"},{"name":"T'ga for South 0.2","price":"200 den"},{"name":"Alexandria 0.7","price":"800 den"},{"name":"T'ga for South 0.7","price":"800 den"},{"name":"House red wine 1L","price":"500 den"}]},{"name":"Ros\u00e9 Wines","items":[{"name":"Alexandria 0.2","price":"200 den"},{"name":"Alexandria 0.7","price":"800 den"},{"name":"Ros\u00e9 1L","price":"400 den"}]},{"name":"Soft Drinks","items":[{"name":"Coca-Cola","price":"90 den"},{"name":"Fanta","price":"90 den"},{"name":"Sprite","price":"90 den"},{"name":"Schweppes","price":"90 den"},{"name":"Tonic","price":"90 den"},{"name":"Fruit juices","price":"90 den"},{"name":"Still water","price":"70 den"},{"name":"Sparkling water","price":"70 den"},{"name":"Still water 0.7","price":"100 den"},{"name":"Sparkling water 0.7","price":"100 den"}]},{"name":"Hot Beverages","items":[{"name":"Espresso","price":"50 den"},{"name":"Macchiato","price":"50 den"},{"name":"Nescafe","price":"90 den"},{"name":"Cappuccino","price":"90 den"},{"name":"Turkish coffee","price":"40 den"},{"name":"Tea","price":"40 den"}]}]},"mk":{"title":"\u041c\u0435\u043d\u0438","categories":[{"name":"\u0421\u0430\u043b\u0430\u0442\u0438","items":[{"name":"\u041c\u0435\u0448\u0430\u043d\u0430 \u0441\u0430\u043b\u0430\u0442\u0430","price":"140 \u0434\u0435\u043d"},{"name":"\u0428\u043e\u043f\u0441\u043a\u0430 \u0441\u0430\u043b\u0430\u0442\u0430","price":"160 \u0434\u0435\u043d"},{"name":"\u0413\u0440\u0447\u043a\u0430 \u0441\u0430\u043b\u0430\u0442\u0430","price":"170 \u0434\u0435\u043d"},{"name":"\u0426\u0435\u0437\u0430\u0440 \u0441\u0430\u043b\u0430\u0442\u0430","price":"220 \u0434\u0435\u043d"},{"name":"\u0417\u0435\u043b\u043a\u0430 \u0441\u0430\u043b\u0430\u0442\u0430","price":"80 \u0434\u0435\u043d"},{"name":"\u0422\u0443\u043d\u0430 \u0441\u0430\u043b\u0430\u0442\u0430","price":"200 \u0434\u0435\u043d"},{"name":"\u0422\u0430\u0440\u0430\u0442\u043e\u0440","price":"180 \u0434\u0435\u043d"},{"name":"\u0422\u0443\u0440\u0448\u0438\u0458\u0430","price":"200 \u0434\u0435\u043d"},{"name":"\u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0441\u043a\u0430 \u0441\u0430\u043b\u0430\u0442\u0430","price":"170 \u0434\u0435\u043d"}]},{"name":"\u041f\u0440\u0435\u0434\u0458\u0430\u0434\u0435\u045a\u0430","items":[{"name":"\u041e\u0432\u0447\u043e \u0441\u0438\u0440\u0435\u045a\u0435","price":"250 \u0434\u0435\u043d"},{"name":"\u0411\u0438\u0435\u043d\u043e \u0441\u0438\u0440\u0435\u045a\u0435 \u043d\u0430 \u0441\u043a\u0430\u0440\u0430","price":"200 \u0434\u0435\u043d"},{"name":"\u041f\u043e\u0445\u043e\u0432\u0430\u043d \u043a\u0430\u0448\u043a\u0430\u0432\u0430\u043b","price":"200 \u0434\u0435\u043d"},{"name":"\u041f\u043e\u0445\u043e\u0432\u0430\u043d\u043e \u0431\u0438\u0435\u043d\u043e \u0441\u0438\u0440\u0435\u045a\u0435","price":"200 \u0434\u0435\u043d"},{"name":"\u041f\u043e\u0445\u043e\u0432\u0430\u043d\u0438 \u0437\u0434\u0435\u043d\u043a\u0438","price":"200 \u0434\u0435\u043d"},{"name":"\u0422\u0438\u043a\u0432\u0438\u0447\u043a\u0438 \u043d\u0430 \u0441\u043a\u0430\u0440\u0430","price":"180 \u0434\u0435\u043d"},{"name":"\u0422\u0438\u043a\u0432\u0438\u0447\u043a\u0438 \u0441\u043e \u043a\u0430\u0448\u043a\u0430\u0432\u0430\u043b","price":"220 \u0434\u0435\u043d"},{"name":"\u041f\u043e\u0445\u043e\u0432\u0430\u043d\u0438 \u0442\u0438\u043a\u0432\u0438\u0447\u043a\u0438","price":"220 \u0434\u0435\u043d"},{"name":"\u041f\u043e\u0445\u043e\u0432\u0430\u043d \u043a\u0440\u043e\u043c\u0438\u0434","price":"150 \u0434\u0435\u043d"},{"name":"\u041f\u043e\u0445\u043e\u0432\u0430\u043d\u0438 \u043f\u0438\u0440\u043e\u0448\u043a\u0438","price":"180 \u0434\u0435\u043d"},{"name":"\u041f\u0435\u0447\u0443\u0440\u043a\u0438 \u043d\u0430 \u0441\u043a\u0430\u0440\u0430","price":"200 \u0434\u0435\u043d"},{"name":"\u0412\u0438\u0442\u043a\u0430\u043b\u043d\u0438\u043a","price":"150 \u0434\u0435\u043d"}]},{"name":"\u0421\u043a\u0430\u0440\u0430","items":[{"name":"\u041f\u0438\u043b\u0435\u0448\u043a\u0438 \u0441\u0442\u0435\u043a","price":"260 \u0434\u0435\u043d"},{"name":"\u041f\u0438\u043b\u0435\u0448\u043a\u0438 \u0441\u0442\u0435\u043a \u0441\u043e \u0437\u0434\u0435\u043d\u043a\u0430","price":"280 \u0434\u0435\u043d"},{"name":"\u041f\u043e\u043b\u043d\u0435\u0442 \u043f\u0438\u043b\u0435\u0448\u043a\u0438 \u0441\u0442\u0435\u043a","price":"280 \u0434\u0435\u043d"},{"name":"\u041f\u0438\u043b\u0435\u0448\u043a\u043e \u0432\u043e \u043a\u0430\u0440\u0438 \u0441\u043e\u0441","price":"300 \u0434\u0435\u043d"},{"name":"\u041f\u0438\u043b\u0435\u0448\u043a\u0438 \u0440\u0430\u0436\u043d\u0438\u0447\u0438","price":"240 \u0434\u0435\u043d"},{"name":"\u0412\u0435\u0448\u0430\u043b\u0438\u0446\u0430","price":"280 \u0434\u0435\u043d"},{"name":"\u041f\u043e\u043b\u043d\u0435\u0442\u0430 \u0432\u0435\u0448\u0430\u043b\u0438\u0446\u0430","price":"300 \u0434\u0435\u043d"},{"name":"\u0411\u0435\u0447\u043a\u0430 \u0448\u043d\u0438\u0446\u043b\u0430","price":"300 \u0434\u0435\u043d"},{"name":"\u0421\u0432\u0438\u043d\u0441\u043a\u0438 \u0440\u0430\u0436\u043d\u0438\u0447\u0438","price":"250 \u0434\u0435\u043d"},{"name":"\u0421\u0432\u0438\u043d\u0441\u043a\u043e \u0440\u0435\u0431\u0440\u043e","price":"320 \u0434\u0435\u043d"},{"name":"\u0414\u043e\u043c\u0430\u0448\u043d\u0438 \u043a\u043e\u043b\u0431\u0430\u0441\u0438\u0446\u0438","price":"320 \u0434\u0435\u043d"},{"name":"\u041f\u043b\u0435\u0441\u043a\u0430\u0432\u0438\u0446\u0430","price":"250 \u0434\u0435\u043d"},{"name":"\u0428\u0430\u0440\u0441\u043a\u0430 \u043f\u043b\u0435\u0441\u043a\u0430\u0432\u0438\u0446\u0430","price":"280 \u0434\u0435\u043d"},{"name":"\u041f\u043e\u043b\u043d\u0435\u0442\u0430 \u043f\u043b\u0435\u0441\u043a\u0430\u0432\u0438\u0446\u0430","price":"300 \u0434\u0435\u043d"},{"name":"\u045c\u0435\u0431\u0430\u043f\u0438","price":"260 \u0434\u0435\u043d"},{"name":"\u0428\u0430\u0440\u0441\u043a\u0430 \u0441\u043e \u0441\u043e\u0441 \u043e\u0434 \u043f\u0435\u0447\u0443\u0440\u043a\u0438","price":"300 \u0434\u0435\u043d"},{"name":"\u041f\u043b\u0435\u0441\u043a\u0430\u0432\u0438\u0446\u0430 \u0441\u043e \u043a\u0430\u0458\u043c\u0430\u043a","price":"300 \u0434\u0435\u043d"}]},{"name":"\u0421\u043f\u0435\u0446\u0438\u0458\u0430\u043b\u0438\u0442\u0435\u0442\u0438","items":[{"name":"\u041c\u0435\u0448\u0430\u043d\u0430 \u0441\u043a\u0430\u0440\u0430 \u0437\u0430 4 \u043b\u0438\u0446\u0430","price":"1550 \u0434\u0435\u043d"},{"name":"\u0421\u0432\u0438\u043d\u0441\u043a\u043e \u043c\u0435\u0441\u043e \u0441\u043e \u0437\u0435\u043b\u0435\u043d\u0447\u0443\u043a","price":"400 \u0434\u0435\u043d"},{"name":"\u0412\u0435\u0432\u0447\u0430\u043d\u0441\u043a\u0430 \u0442\u0430\u0432\u0430 \u201e\u041f\u0435\u043b\u0432\u0435\u0446\u201c","price":"1600 \u0434\u0435\u043d"}]},{"name":"\u041f\u0440\u0438\u043b\u043e\u0437\u0438","items":[{"name":"\u041f\u043e\u043c\u0444\u0440\u0438\u0442","price":"100 \u0434\u0435\u043d"},{"name":"\u041f\u043e\u043c\u0444\u0440\u0438\u0442 \u0441\u043e \u0441\u0438\u0440\u0435\u045a\u0435","price":"110 \u0434\u0435\u043d"},{"name":"\u041f\u0435\u043a\u0430\u0440\u0441\u043a\u0438 \u043a\u043e\u043c\u043f\u0438\u0440","price":"120 \u0434\u0435\u043d"},{"name":"\u041c\u0430\u043a\u0430\u043b\u043e \u0441\u043e \u043b\u0443\u043a","price":"80 \u0434\u0435\u043d"},{"name":"\u041c\u0430\u043a\u0430\u043b\u043e \u0441\u043e \u043f\u0430\u0432\u043b\u0430\u043a\u0430","price":"80 \u0434\u0435\u043d"},{"name":"\u041b\u0443\u0442\u043e \u043f\u0438\u043f\u0435\u0440\u0447\u0435","price":"20 \u0434\u0435\u043d"},{"name":"\u0410\u0458\u0432\u0430\u0440","price":"150 \u0434\u0435\u043d"},{"name":"\u041f\u0438\u043d\u045f\u0443\u0440","price":"150 \u0434\u0435\u043d"},{"name":"\u041d\u0430\u0444\u043e\u0440\u0430 \u0441\u043e \u0441\u0438\u0440\u0435\u045a\u0435","price":"50 \u0434\u0435\u043d"},{"name":"\u041a\u0430\u0458\u043c\u0430\u043a","price":"60 \u0434\u0435\u043d"}]},{"name":"\u041c\u0435\u0437\u0435","items":[{"name":"\u041f\u0438\u043b\u0435\u0448\u043a\u0438 \u043f\u0440\u0441\u0442\u0438","price":"230 \u0434\u0435\u043d"},{"name":"\u041f\u0438\u043b\u0435\u0448\u043a\u0438 \u0441\u0442\u0430\u043f\u0447\u0438\u045a\u0430","price":"230 \u0434\u0435\u043d"},{"name":"\u0427\u0438\u043f\u0441 \u043e\u0434 \u043a\u043e\u043c\u043f\u0438\u0440","price":"120 \u0434\u0435\u043d"},{"name":"\u0411\u043e\u043c\u0431\u0438\u0446\u0438 \u0441\u043e \u043c\u0435\u043b\u0435\u043d\u043e \u043c\u0435\u0441\u043e","price":"250 \u0434\u0435\u043d"},{"name":"\u041f\u043e\u0445\u043e\u0432\u0430\u043d\u0430 \u0434\u0430\u0441\u043a\u0430 \u0437\u0430 4 \u043b\u0438\u0446\u0430","price":"1200 \u0434\u0435\u043d"}]},{"name":"\u0414\u0435\u0441\u0435\u0440\u0442\u0438","items":[{"name":"\u041f\u0430\u043b\u0430\u0447\u0438\u043d\u043a\u0438 (\u043a\u0440\u0435\u043c/\u0431\u0430\u043d\u0430\u043d\u0430/\u043c\u0435\u0434 \u0438 \u043e\u0440\u0435\u0432\u0438/\u045f\u0435\u043c)","price":"120 \u0434\u0435\u043d"},{"name":"\u0427\u043e\u043a\u043e\u043b\u0430\u0434\u043d\u0438 \u0431\u043e\u043c\u0431\u0438\u0446\u0438","price":"140 \u0434\u0435\u043d"},{"name":"\u041e\u0432\u043e\u0448\u043d\u0430 \u0441\u0430\u043b\u0430\u0442\u0430","price":"120 \u0434\u0435\u043d"}]},{"name":"\u0410\u043f\u0435\u0442\u0438\u0441\u0430\u043d\u0438","items":[{"name":"\u041a\u0438\u043a\u0438\u0440\u0438\u043a\u0438","price":"80 \u0434\u0435\u043d"},{"name":"\u0411\u0430\u0434\u0435\u043c\u0438","price":"150 \u0434\u0435\u043d"},{"name":"\u041b\u0435\u0448\u043d\u0438\u043a","price":"150 \u0434\u0435\u043d"}]},{"name":"\u0416\u0435\u0441\u0442\u043e\u043a\u0438 \u043f\u0438\u0458\u0430\u043b\u043e\u0446\u0438","items":[{"name":"\u0416\u043e\u043b\u0442\u0430 \u043b\u043e\u0437\u043e\u0432\u0430 \u0440\u0430\u043a\u0438\u0458\u0430","price":"90 \u0434\u0435\u043d"},{"name":"\u0411\u0435\u043b\u0430 \u043b\u043e\u0437\u043e\u0432\u0430 \u0440\u0430\u043a\u0438\u0458\u0430","price":"80 \u0434\u0435\u043d"},{"name":"\u041a\u043e\u045a\u0430\u043a","price":"80 \u0434\u0435\u043d"},{"name":"\u0428\u0442\u043e\u043a","price":"100 \u0434\u0435\u043d"},{"name":"\u041c\u0430\u0441\u0442\u0438\u043a\u0430","price":"90 \u0434\u0435\u043d"},{"name":"\u0412\u043e\u0434\u043a\u0430","price":"80 \u0434\u0435\u043d"},{"name":"\u0423\u0437\u043e","price":"80 \u0434\u0435\u043d"},{"name":"\u040f\u0438\u043d","price":"80 \u0434\u0435\u043d"},{"name":"\u041f\u0435\u043b\u0438\u043d\u043a\u043e\u0432\u0435\u0446","price":"80 \u0434\u0435\u043d"},{"name":"\u0412\u0438\u0441\u043a\u0438","price":"150 \u0434\u0435\u043d"},{"name":"\u0408\u0430\u0431\u043e\u043b\u043a\u043e\u0432\u0430 \u0440\u0430\u043a\u0438\u0458\u0430","price":"100 \u0434\u0435\u043d"},{"name":"\u0421\u043b\u0438\u0432\u043e\u0432\u0430 \u0440\u0430\u043a\u0438\u0458\u0430","price":"100 \u0434\u0435\u043d"}]},{"name":"\u041f\u0438\u0432\u043e","items":[{"name":"\u0421\u043a\u043e\u043f\u0441\u043a\u043e","price":"100 \u0434\u0435\u043d"},{"name":"\u0421\u043a\u043e\u043f\u0441\u043a\u043e \u0421\u043c\u0443\u0442","price":"100 \u0434\u0435\u043d"},{"name":"\u0417\u043b\u0430\u0442\u0435\u043d \u0414\u0430\u0431","price":"100 \u0434\u0435\u043d"},{"name":"\u041a\u0440\u0430\u043b\u0438 \u041c\u0430\u0440\u043a\u043e","price":"90 \u0434\u0435\u043d"},{"name":"\u0422\u0443\u0431\u043e\u0440\u0433","price":"120 \u0434\u0435\u043d"},{"name":"\u0425\u0430\u0458\u043d\u0435\u043a\u0435\u043d","price":"110 \u0434\u0435\u043d"},{"name":"\u0410\u043c\u0441\u0442\u0435\u043b","price":"120 \u0434\u0435\u043d"}]},{"name":"\u0411\u0435\u043b\u0438 \u0412\u0438\u043d\u0430","items":[{"name":"\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0438\u0458\u0430 0.2","price":"200 \u0434\u0435\u043d"},{"name":"\u0422\u0435\u043c\u0458\u0430\u043d\u0438\u043a\u0430 0.2","price":"200 \u0434\u0435\u043d"},{"name":"\u0422\u0440\u0430\u043c\u0438\u043d\u0435\u0446 0.2","price":"200 \u0434\u0435\u043d"},{"name":"\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0438\u0458\u0430 0.7","price":"800 \u0434\u0435\u043d"},{"name":"\u0422\u0435\u043c\u0458\u0430\u043d\u0438\u043a\u0430 0.7","price":"800 \u0434\u0435\u043d"},{"name":"\u0422\u0440\u0430\u043c\u0438\u043d\u0435\u0446 0.7","price":"800 \u0434\u0435\u043d"},{"name":"\u0414\u043e\u043c\u0430\u0448\u043d\u043e \u0431\u0435\u043b\u043e \u0432\u0438\u043d\u043e 1\u043b","price":"500 \u0434\u0435\u043d"},{"name":"\u0421\u043c\u0435\u0434\u0435\u0440\u0435\u0432\u043a\u0430 1\u043b","price":"400 \u0434\u0435\u043d"},{"name":"\u041c\u041e\u041d\u0422\u0415\u041a\u041e \u0422\u0435\u043c\u0458\u0430\u043d\u0438\u043a\u0430 0.7","price":"1100 \u0434\u0435\u043d"},{"name":"\u041c\u041e\u041d\u0422\u0415\u041a\u041e \u0428\u0430\u0440\u0434\u043e\u043d\u0435 0.7","price":"1100 \u0434\u0435\u043d"}]},{"name":"\u0426\u0440\u0432\u0435\u043d\u0438 \u0412\u0438\u043d\u0430","items":[{"name":"\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0438\u0458\u0430 0.2","price":"200 \u0434\u0435\u043d"},{"name":"\u0422'\u0433\u0430 \u0437\u0430 \u0458\u0443\u0433 0.2","price":"200 \u0434\u0435\u043d"},{"name":"\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0438\u0458\u0430 0.7","price":"800 \u0434\u0435\u043d"},{"name":"\u0422'\u0433\u0430 \u0437\u0430 \u0458\u0443\u0433 0.7","price":"800 \u0434\u0435\u043d"},{"name":"\u0414\u043e\u043c\u0430\u0448\u043d\u043e \u0446\u0440\u0432\u0435\u043d\u043e \u0432\u0438\u043d\u043e 1\u043b","price":"500 \u0434\u0435\u043d"}]},{"name":"\u0420\u043e\u0437\u0435 \u0412\u0438\u043d\u0430","items":[{"name":"\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0438\u0458\u0430 0.2","price":"200 \u0434\u0435\u043d"},{"name":"\u0410\u043b\u0435\u043a\u0441\u0430\u043d\u0434\u0440\u0438\u0458\u0430 0.7","price":"800 \u0434\u0435\u043d"},{"name":"\u0420\u043e\u0437\u0435 1\u043b","price":"400 \u0434\u0435\u043d"}]},{"name":"\u0411\u0435\u0437\u0430\u043b\u043a\u043e\u0445\u043e\u043b\u043d\u0438 \u043f\u0438\u0458\u0430\u043b\u043e\u0446\u0438","items":[{"name":"\u041a\u043e\u043a\u0430 \u041a\u043e\u043b\u0430","price":"90 \u0434\u0435\u043d"},{"name":"\u0424\u0430\u043d\u0442\u0430","price":"90 \u0434\u0435\u043d"},{"name":"\u0421\u043f\u0440\u0430\u0458\u0442","price":"90 \u0434\u0435\u043d"},{"name":"\u0428\u0432\u0435\u043f\u0441","price":"90 \u0434\u0435\u043d"},{"name":"\u0422\u043e\u043d\u0438\u043a","price":"90 \u0434\u0435\u043d"},{"name":"\u041e\u0432\u043e\u0448\u043d\u0438 \u0441\u043e\u043a\u043e\u0432\u0438","price":"90 \u0434\u0435\u043d"},{"name":"\u041d\u0435\u0433\u0430\u0437\u0438\u0440\u0430\u043d\u0430 \u0432\u043e\u0434\u0430","price":"70 \u0434\u0435\u043d"},{"name":"\u0413\u0430\u0437\u0438\u0440\u0430\u043d\u0430 \u0432\u043e\u0434\u0430","price":"70 \u0434\u0435\u043d"},{"name":"\u041d\u0435\u0433\u0430\u0437\u0438\u0440\u0430\u043d\u0430 \u0432\u043e\u0434\u0430 0.7","price":"100 \u0434\u0435\u043d"},{"name":"\u0413\u0430\u0437\u0438\u0440\u0430\u043d\u0430 \u0432\u043e\u0434\u0430 0.7","price":"100 \u0434\u0435\u043d"}]},{"name":"\u0422\u043e\u043f\u043b\u0438 \u043d\u0430\u043f\u0438\u0442\u043e\u0446\u0438","items":[{"name":"\u0415\u0441\u043f\u0440\u0435\u0441\u043e","price":"50 \u0434\u0435\u043d"},{"name":"\u041c\u0430\u043a\u0438\u0458\u0430\u0442\u043e","price":"50 \u0434\u0435\u043d"},{"name":"\u041d\u0435\u0441\u043a\u0430\u0444\u0435","price":"90 \u0434\u0435\u043d"},{"name":"\u041a\u0430\u043f\u0443\u0447\u0438\u043d\u043e","price":"90 \u0434\u0435\u043d"},{"name":"\u0422\u0443\u0440\u0441\u043a\u043e \u043a\u0430\u0444\u0435","price":"40 \u0434\u0435\u043d"},{"name":"\u0427\u0430\u0458","price":"40 \u0434\u0435\u043d"}]}]}};
 
-  async function loadMenu() {
-    const response = await fetch("menu/menu.json");
-    menuData = await response.json();
-  }
+    let currentLanguage = null;
 
-  function openLanguageModal() {
-    document.getElementById("languageModal").style.display = "flex";
-  }
+    function openLanguageModal() {
+      document.getElementById('languageModal').classList.remove('hidden');
+    }
 
-  function chooseLanguage(lang) {
-    currentLanguage = lang;
-    document.getElementById("languageModal").style.display = "none";
-    renderMenu();
-  }
+    function chooseLanguage(lang) {
+      currentLanguage = lang;
+      document.getElementById('languageModal').classList.add('hidden');
+      renderMenu();
+    }
 
-  function toggleCategory(section) {
-    section.classList.toggle("open");
-  }
+    function toggleCategory(section) {
+      section.classList.toggle('open');
+    }
 
-  function renderMenu() {
-    const container = document.getElementById("menu");
-    const title = document.getElementById("menu-title");
+    function renderMenu() {
+      const container = document.getElementById('menu');
+      const title     = document.getElementById('menu-title');
 
-    container.innerHTML = "";
-    title.textContent = menuData[currentLanguage].title;
+      container.innerHTML = '';
+      title.textContent = menuData[currentLanguage].title;
 
-    menuData[currentLanguage].categories.forEach((category, index) => {
-      const section = document.createElement("section");
-      section.className = "menu-group";
+      menuData[currentLanguage].categories.forEach((category, index) => {
+        const section = document.createElement('section');
+        section.className = 'menu-group';
+        if (index === 0) section.classList.add('open');
 
-      if (index === 0) section.classList.add("open");
+        const titleLine = document.createElement('div');
+        titleLine.className = 'menu-title-line';
+        titleLine.onclick = () => toggleCategory(section);
 
-      const titleLine = document.createElement("div");
-      titleLine.className = "menu-title-line";
-      titleLine.onclick = () => toggleCategory(section);
+        const h2 = document.createElement('h2');
+        h2.textContent = category.name;
 
-      const h2 = document.createElement("h2");
-      h2.textContent = category.name;
+        const chevron = document.createElement('span');
+        chevron.className = 'chevron';
+        chevron.innerHTML = '&#9662;';
 
-      const chevron = document.createElement("span");
-      chevron.className = "chevron";
-      chevron.innerHTML = "▾";
+        titleLine.appendChild(h2);
+        titleLine.appendChild(chevron);
 
-      titleLine.appendChild(h2);
-      titleLine.appendChild(chevron);
+        const items = document.createElement('div');
+        items.className = 'menu-items';
 
-      const items = document.createElement("div");
-      items.className = "menu-items";
+        category.items.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'menu-card';
+          card.innerHTML = `
+            <span>${item.name}</span>
+            <span class="price">${item.price}</span>
+          `;
+          items.appendChild(card);
+        });
 
-      category.items.forEach(item => {
-        const card = document.createElement("div");
-        card.className = "menu-card";
-        card.innerHTML = `
-          <span>${item.name}</span>
-          <span class="price">${item.price}</span>
-        `;
-        items.appendChild(card);
+        section.appendChild(titleLine);
+        section.appendChild(items);
+        container.appendChild(section);
       });
+    }
 
-      section.appendChild(titleLine);
-      section.appendChild(items);
-      container.appendChild(section);
-    });
-  }
-
-  loadMenu();
-</script>
+    loadMenu();
+  </script>
 
 </body>
 </html>

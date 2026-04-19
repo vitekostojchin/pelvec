@@ -4,316 +4,235 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Restaurant Pelvec Vevchani</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <!-- Favicon -->
+  <meta name="description" content="Restaurant Pelvec in Vevchani, North Macedonia. Traditional Macedonian cuisine, grill specialties, and a warm ambiance. Make a reservation at 070 870 292.">
   <link rel="icon" href="img/minlogo.png" type="image/png">
-  <!-- Apple touch icons -->
   <link rel="apple-touch-icon" href="img/minlogo.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="img/minlogo.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="img/minlogo.png">
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
-  <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/default.css">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
-  <link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
-
+  <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-  <div id="loader-wrapper">
-    <div class="loader">
-      <img src="img/minlogo.png" alt="Loading..." />
+<body id="page-top">
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-inner">
+      <img src="img/minlogo.png" alt="Loading Pelvec">
     </div>
   </div>
 
-<!-- Navigation -->
-<nav id="menu" class="navbar navbar-default navbar-fixed-top">
-  <div class="container"> 
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand page-scroll" href="#page-top" data-key="brand-name">Pelvec</a> </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#about" class="page-scroll" data-key="navabout">About</a></li>
-        <li><a href="#menu-section" class="page-scroll" data-key="navmenu">Menu</a></li>
-        <li><a href="#portfolio" class="page-scroll" data-key="navgallery">Gallery</a></li>
-        <li><a href="#call-reservation" class="page-scroll" data-key="navcontact">Contact</a></li>
-        <li>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#page-top" class="nav-logo">Pelvec</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-menu" id="nav-menu">
+        <a href="#about" data-key="navabout">About</a>
+        <a href="#menu-section" data-key="navmenu">Menu</a>
+        <a href="#gallery" data-key="navgallery">Gallery</a>
+        <a href="#reservation" data-key="navcontact">Contact</a>
+        <div class="nav-lang">
           <select id="language-selector" onchange="setLanguage()">
-            <option value="en">English</option>
-            <option value="mk">Macedonian</option>
+            <option value="en">EN</option>
+            <option value="mk">МК</option>
           </select>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- Header -->
-<header id="header">
-  <div class="intro">
-    <div class="overlay">
-      <div class="container">
-        <div class="row">
-          <div class="intro-text">
-            <p>Restaurant</p>
-            <h1>Pelvec</h1>
-            <p>Vevchani</p>
-          </div>
         </div>
       </div>
     </div>
-  </div>
-</header>
+  </nav>
 
-<!-- About Section -->
-<div id="about">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-6 ">
-        <div class="about-img"><img src="img/about2.png" class="img-responsive" alt=""></div>
-      </div>
-      <div class="col-xs-12 col-md-6">
-        <div class="about-text">
-          <h2 data-key="abouttitle">Our Restaurant</h2>
-          <hr>
-          <p data-key="abouttext1">Informations about restaurant, when is established, what we offer...</p>
-          <p data-key="abouttext2">Some more informations about restaurant, what are our special dishesh etc...</p>
-        </div>
-      </div>
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-sub" data-key="herosubtop">Restaurant</span>
+      <h1 class="hero-title">Pelvec</h1>
+      <span class="hero-location" data-key="herolocation">Vevchani, North Macedonia</span>
+      <a href="#reservation" class="hero-cta" data-key="herocta">Reserve a Table</a>
     </div>
-  </div>
-</div>
-
-<!-- Restaurant Menu Section -->
-<div id="menu-section">
-  <h2 data-key="menutitle">Our Menu</h2>
-  <p data-key="menutext">Tap below to view or download our full menu:</p>
-
-  <div class="pdf-preview-container">
-    <a id="menu-pdf-link" href="menu.html" target="_blank">
-      <img src="img/menu-thumbnail.png" alt="Menu Preview" class="pdf-thumbnail">
-      <p data-key="menutext2">Click to view full menu</p>
+    <a href="#about" class="hero-scroll" aria-label="Scroll to about section">
+      <span></span>
     </a>
-  </div>
-</div>
+  </section>
 
-<!-- Portfolio Section -->
-<div id="portfolio">
-  <div class="section-title text-center center">
-    <div class="overlay">
+  <!-- About -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-image reveal">
+        <img src="img/about2.png" alt="Restaurant Pelvec dining area">
+      </div>
+      <div class="about-text reveal">
+        <p class="section-label">Our Story</p>
+        <h2 data-key="abouttitle">Our Restaurant</h2>
+        <div class="gold-line"></div>
+        <p data-key="abouttext1">Information about the restaurant...</p>
+        <p data-key="abouttext2">More information about the restaurant...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu-section">
+    <div class="section-inner centered">
+      <p class="section-label">Explore</p>
+      <h2 data-key="menutitle">Our Menu</h2>
+      <div class="gold-line centered"></div>
+      <p data-key="menutext">Browse our full selection of dishes and drinks.</p>
+      <a href="menu.html" target="_blank" class="menu-card-link reveal">
+        <div class="menu-card">
+          <img src="img/menu-thumbnail.png" alt="Pelvec menu preview" class="menu-thumb">
+          <div class="menu-card-overlay">
+            <span data-key="menutext2">View Full Menu</span>
+            <i class="fa fa-long-arrow-right"></i>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="section-header centered reveal">
+      <p class="section-label">Photography</p>
       <h2 data-key="gallerytitle">Gallery</h2>
-      <hr>
-      <p data-key="gallerytext">See pictures from our dishes and ambient.</p>
+      <div class="gold-line centered"></div>
+      <p data-key="gallerytext">See pictures from our dishes and ambiance.</p>
     </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="categories">
-        <ul class="cat">
-          <li>
-            <ol class="type">
-              <li><a href="#" data-filter="*" class="active" data-key="all">All</a></li>
-              <!-- <li><a href="#" data-filter=".starters" data-key="starters">Starters</a></li> -->
-              <li><a href="#" data-filter=".maindishes" data-key="food">Food</a></li>
-              <li><a href="#" data-filter=".ambient" data-key="ambient">Ambiance</a></li>
-            </ol>
-          </li>
-        </ul>
-        <div class="clearfix"></div>
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="*" data-key="all">All</button>
+      <button class="filter-btn" data-filter="food" data-key="food">Food</button>
+      <button class="filter-btn" data-filter="ambient" data-key="ambient">Ambiance</button>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item ambient">
+        <a href="img/portfolio/gore1.jpg">
+          <img src="img/portfolio/gore1.jpg" alt="Restaurant Pelvec interior ambiance" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item food">
+        <a href="img/portfolio/selsko.jpg">
+          <img src="img/portfolio/selsko.jpg" alt="Traditional Macedonian dish" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item ambient">
+        <a href="img/portfolio/vino.jpg">
+          <img src="img/portfolio/vino.jpg" alt="Wine selection at Pelvec" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item food">
+        <a href="img/portfolio/kolbas.jpg">
+          <img src="img/portfolio/kolbas.jpg" alt="Homemade sausages" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item food">
+        <a href="img/portfolio/polnetstek.jpg">
+          <img src="img/portfolio/polnetstek.jpg" alt="Stuffed chicken breast" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item food">
+        <a href="img/portfolio/polnetavesalica.jpg">
+          <img src="img/portfolio/polnetavesalica.jpg" alt="Stuffed pork tenderloin" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item food">
+        <a href="img/portfolio/meshana.jpg">
+          <img src="img/portfolio/meshana.jpg" alt="Mixed grill platter" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item ambient">
+        <a href="img/portfolio/dvor1.jpg">
+          <img src="img/portfolio/dvor1.jpg" alt="Outdoor courtyard at Pelvec" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item ambient">
+        <a href="img/portfolio/dolu5.png">
+          <img src="img/portfolio/dolu5.png" alt="Restaurant dining area" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item food">
+        <a href="img/portfolio/rebro.jpg">
+          <img src="img/portfolio/rebro.jpg" alt="Grilled pork ribs" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item food">
+        <a href="img/portfolio/sharska.jpg">
+          <img src="img/portfolio/sharska.jpg" alt="Sharska burger" loading="lazy">
+        </a>
+      </div>
+      <div class="gallery-item food">
+        <a href="img/portfolio/vesos.jpg">
+          <img src="img/portfolio/vesos.jpg" alt="Pork tenderloin with sauce" loading="lazy">
+        </a>
       </div>
     </div>
-    <div class="row">
-      <div class="portfolio-items">
-        <div class="col-sm-6 col-md-4 col-lg-4 ambient">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/gore1.jpg"  data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <!-- <h4>Meze</h4> -->
-              </div>
-              <img src="img/portfolio/gore1.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 maindishes">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/selsko.jpg"  data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <!-- <h4>Dish Name</h4> -->
-              </div>
-              <img src="img/portfolio/selsko.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 ambient">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/vino.jpg"  data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <!-- <h4>Dish Name</h4> -->
-              </div>
-              <img src="img/portfolio/vino.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 maindishes">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/kolbas.jpg" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <!-- <h4>Dish Name</h4> -->
-              </div>
-              <img src="img/portfolio/kolbas.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 maindishes">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/polnetstek.jpg"  data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <!-- <h4>Dish Name</h4> -->
-              </div>
-              <img src="img/portfolio/polnetstek.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 maindishes">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/polnetavesalica.jpg"  data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <!-- <h4>Dish Name</h4> -->
-              </div>
-              <img src="img/portfolio/polnetavesalica.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 maindishes">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/meshana.jpg"  data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <!-- <h4>Dish Name</h4> -->
-              </div>
-              <img src="img/portfolio/meshana.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 ambient">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/dvor1.jpg"  data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <!-- <h4>Dish Name</h4> -->
-              </div>
-              <img src="img/portfolio/dvor1.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 ambient">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/dolu5.png" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <!-- <h4>Dish Name</h4> -->
-              </div>
-              <img src="img/portfolio/dolu5.png" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 maindishes">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/rebro.jpg"  data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <!-- <h4>Dish Name</h4> -->
-              </div>
-              <img src="img/portfolio/rebro.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 maindishes">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/sharska.jpg"  data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <!-- <h4>Dish Name</h4> -->
-              </div>
-              <img src="img/portfolio/sharska.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4 maindishes">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href="img/portfolio/vesos.jpg"  data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <!-- <h4>Dish Name</h4> -->
-              </div>
-              <img src="img/portfolio/vesos.jpg" class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-      </div>
+  </section>
+
+  <!-- Reservation -->
+  <section id="reservation">
+    <div class="section-inner centered">
+      <p class="section-label light" data-key="reservationlabel">Reservations</p>
+      <h2 data-key="reservationtitle">Want to make a reservation?</h2>
+      <a href="tel:+38970870292" class="reservation-phone">070 870 292</a>
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- Call Reservation Section -->
-<div id="call-reservation" class="text-center">
-  <div class="container">
-    <h2 data-key="reservationtitle">Want to make a reservation? Call <strong><a href="tel:+38970870292">070 870 292</a></strong></h2>
-  </div>
-</div>
-
-<!-- Footer Section -->
-<div id="footer">
-  <div class="container text-center">
-    <div class="col-md-4">
-      <h3 data-key="addresstitle">Address</h3>
-      <div class="contact-item">
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h3 data-key="addresstitle">Address</h3>
         <p data-key="street">Vevchani 6335</p>
         <p data-key="country">Republic of North Macedonia</p>
       </div>
-    </div>
-    <div class="col-md-4">
-      <h3 data-key="workinghourstitle">Working Hours</h3>
-      <div class="contact-item">
-        <p data-key="weekdayhours">Tue-Thurs: 12:00 AM - 12:00 PM</p>
-        <p data-key="weekendhours">Fri-Sun: 11:00 AM - 01:00 AM</p>
+      <div class="footer-col footer-brand">
+        <a href="#page-top" class="footer-logo">Pelvec</a>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/pelvecvevchani/?locale=mk_MK" target="_blank" aria-label="Facebook">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a href="https://www.instagram.com/pelvecvevcani/" target="_blank" aria-label="Instagram">
+            <i class="fa fa-instagram"></i>
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="col-md-4">
-      <h3 data-key="contacttitle">Contact Info</h3>
-      <div class="contact-item">
+      <div class="footer-col footer-col-right">
+        <h3 data-key="workinghourstitle">Working Hours</h3>
+        <p data-key="weekdayhours">Tue–Thu: 12:00 – 24:00</p>
+        <p data-key="weekendhours">Fri–Sun: 11:00 – 01:00</p>
+        <h3 data-key="contacttitle" style="margin-top: 28px">Contact</h3>
         <p><a href="tel:+38970870292" data-key="contactphone">Phone: 070 870 292</a></p>
         <p data-key="contactemail">Email: info@pelvec.com</p>
       </div>
     </div>
-  </div>
-  <div class="container-fluid text-center copyrights">
-    <div class="col-md-8 col-md-offset-2">
-      <div class="social">
-        <ul>
-          <li><a href="https://www.facebook.com/pelvecvevchani/?locale=mk_MK" target="_blank"><i class="fa fa-facebook"></i></a></li>
-          <li><a href="https://www.instagram.com/pelvecvevcani/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-        </ul>
-      </div>
+    <div class="footer-bottom">
       <p>&copy; 2025 Pelvec Vevchani. All rights reserved.</p>
     </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <button class="lb-close" aria-label="Close lightbox">&#x2715;</button>
+    <button class="lb-prev" aria-label="Previous image">&#8249;</button>
+    <button class="lb-next" aria-label="Next image">&#8250;</button>
+    <img src="" alt="Gallery image">
   </div>
-</div>
 
-<script type="text/javascript" src="js/jquery.1.11.1.js"></script> 
-<script type="text/javascript" src="js/bootstrap.js"></script> 
-<script type="text/javascript" src="js/SmoothScroll.js"></script> 
-<script type="text/javascript" src="js/nivo-lightbox.js"></script> 
-<script type="text/javascript" src="js/jquery.isotope.js"></script> 
-<script type="text/javascript" src="js/jqBootstrapValidation.js"></script> 
-<script type="text/javascript" src="js/contact_me.js"></script> 
-<script type="text/javascript" src="js/main.js"></script>
-<script src="js/language.js"></script>
-
-<div id="language-modal">
-  <div class="modal-content">
-    <h3>Please select a language</h3>
-    <select id="modal-language-selector">
-      <option value="en">English</option>
-      <option value="mk">Македонски</option>
-    </select>
-    <br />
-    <button onclick="applyModalLanguage()" class="btn-custom">Continue</button>
+  <!-- Language Modal -->
+  <div id="language-modal">
+    <div class="modal-box">
+      <div class="modal-logo">Pelvec</div>
+      <h3>Select Language</h3>
+      <button onclick="applyModalLanguage('en')">English</button>
+      <button onclick="applyModalLanguage('mk')">Македонски</button>
+    </div>
   </div>
-</div>
 
-
+  <script src="js/language.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
