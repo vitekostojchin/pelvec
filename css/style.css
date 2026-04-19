@@ -867,9 +867,55 @@ section { padding: var(--pad) 0; }
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (max-width: 1200px) {
+/* Clusters hidden on tablet — not enough horizontal room */
+@media (max-width: 1199px) {
   .hero-photo-cluster { display: none; }
 }
+
+/* Mobile: 1 circle per side, peek in from edges, staggered vertically */
+@media (max-width: 767px) {
+  .hero-photo-cluster {
+    display: block;
+    width: 90px;
+    height: 90px;
+  }
+
+  .hero-photo-cluster--left {
+    left: -18px;
+    right: auto;
+    top: 50%;
+    transform: translateY(-75%);
+  }
+
+  .hero-photo-cluster--right {
+    right: -18px;
+    left: auto;
+    top: 50%;
+    transform: translateY(-25%);
+  }
+
+  /* Left cluster: show only frame--d */
+  .hero-photo-frame--e { display: none; }
+  .hero-photo-frame--d {
+    width: 90px;
+    height: 90px;
+    top: 0; left: 0; right: auto;
+    transform: none;
+  }
+
+  /* Right cluster: show only frame--b */
+  .hero-photo-frame--a,
+  .hero-photo-frame--c { display: none; }
+  .hero-photo-frame--b {
+    width: 90px;
+    height: 90px;
+    top: 0; right: 0; left: auto;
+    transform: none;
+  }
+}
+
+/* Bottom photo row no longer needed */
+.hero-mobile-photos { display: none !important; }
 
 @media (max-width: 1024px) {
   :root { --pad: 90px; }
