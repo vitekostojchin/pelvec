@@ -7,7 +7,7 @@ var languageData = {
     navcontact: "Contact",
     // Hero
     herosubtop:   "Restaurant",
-    herolocation: "Vevchani, North Macedonia",
+    herolocation: "Vevchani, Macedonia",
     herocta:      "Reserve a Table",
     // About
     abouttitle: "Our Restaurant",
