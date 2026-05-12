@@ -45,7 +45,7 @@ var languageData = {
     navcontact: "Контакт",
     // Hero
     herosubtop:   "Ресторан",
-    herolocation: "Вевчани, Северна Македонија",
+    herolocation: "Вевчани, Македонија",
     herocta:      "Резервирај Маса",
     // About
     abouttitle: "Нашиот Ресторан",
@@ -67,7 +67,7 @@ var languageData = {
     // Footer
     addresstitle:     "Адреса",
     street:           "Вевчани 6335",
-    country:          "Република Северна Македонија",
+    country:          "Република Македонија",
     workinghourstitle:"Работно Време",
     weekdayhours:     "Втор–Четв: 12:00 – 24:00",
     weekendhours:     "Пет–Нед: 11:00 – 01:00",
