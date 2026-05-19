@@ -23,6 +23,13 @@ var languageData = {
     all:     "All",
     food:    "Food",
     ambient: "Ambiance",
+    // Highlights
+    hl1title: "Traditional Cuisine",
+    hl1text:  "Authentic Macedonian recipes crafted from generations of family tradition.",
+    hl2title: "Garden Terrace",
+    hl2text:  "Dine under the stars in our beautiful outdoor terrace surrounded by nature.",
+    hl3title: "Grill Specialties",
+    hl3text:  "Hand-selected meats grilled to perfection over open flame.",
     // Reservation
     reservationlabel: "Reservations",
     reservationtitle: "Want to make a reservation?",
@@ -61,6 +68,13 @@ var languageData = {
     all:     "Сите",
     food:    "Јадења",
     ambient: "Амбиент",
+    // Highlights
+    hl1title: "Традиционална Кујна",
+    hl1text:  "Автентични македонски рецепти создадени од генерации семејна традиција.",
+    hl2title: "Градинска Тераса",
+    hl2text:  "Вечерајте под ѕвездите на нашата убава надворешна тераса опкружена со природа.",
+    hl3title: "Скара Специјалитети",
+    hl3text:  "Рачно одбрани месни специјалитети подготвени до совршенство на отворен оган.",
     // Reservation
     reservationlabel: "Резервации",
     reservationtitle: "Сакате да направите резервација?",
@@ -77,7 +91,7 @@ var languageData = {
   }
 };
 
-var currentLanguage = 'en';
+var currentLanguage = 'mk';
 
 function setLanguage() {
   currentLanguage = document.getElementById('language-selector').value;
@@ -90,6 +104,8 @@ function loadLanguage() {
     var val = languageData[currentLanguage][key];
     if (val !== undefined) el.innerHTML = val;
   });
+  var sel = document.getElementById('language-selector');
+  if (sel) sel.value = currentLanguage;
 }
 
 function applyModalLanguage(lang) {

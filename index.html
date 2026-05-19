@@ -39,7 +39,7 @@
         <div class="nav-lang">
           <select id="language-selector" onchange="setLanguage()">
             <option value="en">EN</option>
-            <option value="mk">МК</option>
+            <option value="mk" selected>МК</option>
           </select>
         </div>
       </div>
@@ -49,6 +49,7 @@
   <!-- Hero -->
   <section id="hero">
     <!-- Background atmosphere -->
+    <div class="hero-dot-grid"></div>
     <div class="hero-bg-glow"></div>
     <div class="hero-plate-ring"></div>
     <!-- Left side: circular photo cluster (2 frames) -->
@@ -124,6 +125,27 @@
     </div>
   </section>
 
+  <!-- Highlights -->
+  <section id="highlights">
+    <div class="highlights-grid">
+      <div class="highlight-card reveal">
+        <div class="highlight-icon"><i class="fa fa-cutlery"></i></div>
+        <h4 class="highlight-title" data-key="hl1title">Traditional Cuisine</h4>
+        <p data-key="hl1text">Authentic Macedonian recipes crafted from generations of family tradition.</p>
+      </div>
+      <div class="highlight-card reveal">
+        <div class="highlight-icon"><i class="fa fa-leaf"></i></div>
+        <h4 class="highlight-title" data-key="hl2title">Garden Terrace</h4>
+        <p data-key="hl2text">Dine under the stars in our beautiful outdoor terrace surrounded by nature.</p>
+      </div>
+      <div class="highlight-card reveal">
+        <div class="highlight-icon"><i class="fa fa-fire"></i></div>
+        <h4 class="highlight-title" data-key="hl3title">Grill Specialties</h4>
+        <p data-key="hl3text">Hand-selected meats grilled to perfection over open flame.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- Menu Section -->
   <section id="menu-section">
     <div class="section-inner centered">
@@ -157,7 +179,7 @@
       <button class="filter-btn" data-filter="ambient" data-key="ambient">Ambiance</button>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item ambient">
+      <div class="gallery-item ambient gallery-item--large">
         <a href="img/portfolio/gore1.jpg">
           <img src="img/portfolio/gore1.jpg" alt="Restaurant Pelvec interior ambiance" loading="lazy">
         </a>
@@ -187,7 +209,7 @@
           <img src="img/portfolio/polnetavesalica.jpg" alt="Stuffed pork tenderloin" loading="lazy">
         </a>
       </div>
-      <div class="gallery-item food">
+      <div class="gallery-item food gallery-item--wide">
         <a href="img/portfolio/meshana.jpg">
           <img src="img/portfolio/meshana.jpg" alt="Mixed grill platter" loading="lazy">
         </a>
@@ -197,7 +219,7 @@
           <img src="img/portfolio/dvor1.jpg" alt="Outdoor courtyard at Pelvec" loading="lazy">
         </a>
       </div>
-      <div class="gallery-item ambient">
+      <div class="gallery-item ambient gallery-item--tall">
         <a href="img/portfolio/dolu5.png">
           <img src="img/portfolio/dolu5.png" alt="Restaurant dining area" loading="lazy">
         </a>
@@ -222,7 +244,7 @@
           <img src="img/portfolio/6643.jpg" alt="Charcuterie and salad spread" loading="lazy">
         </a>
       </div>
-      <div class="gallery-item ambient">
+      <div class="gallery-item ambient gallery-item--large">
         <a href="img/portfolio/6644.jpg">
           <img src="img/portfolio/6644.jpg" alt="Outdoor terrace with mountain views" loading="lazy">
         </a>
@@ -242,7 +264,7 @@
           <img src="img/portfolio/6647.jpg" alt="Flower-lined garden path at night" loading="lazy">
         </a>
       </div>
-      <div class="gallery-item food">
+      <div class="gallery-item food gallery-item--wide">
         <a href="img/portfolio/6648.jpg">
           <img src="img/portfolio/6648.jpg" alt="Seasonal fruit platter" loading="lazy">
         </a>
@@ -257,12 +279,12 @@
           <img src="img/portfolio/6650.jpg" alt="Grilled meat with roasted vegetables" loading="lazy">
         </a>
       </div>
-      <div class="gallery-item food">
+      <div class="gallery-item food gallery-item--tall">
         <a href="img/portfolio/6651.jpg">
           <img src="img/portfolio/6651.jpg" alt="Dining table with wine and grilled dishes" loading="lazy">
         </a>
       </div>
-      <div class="gallery-item ambient">
+      <div class="gallery-item ambient gallery-item--wide">
         <a href="img/portfolio/6652.jpg">
           <img src="img/portfolio/6652.jpg" alt="Rustic pergola dining area" loading="lazy">
         </a>
@@ -272,6 +294,7 @@
 
   <!-- Reservation -->
   <section id="reservation">
+    <div class="reservation-bg-word">Pelvec</div>
     <div class="section-inner centered">
       <p class="section-label light" data-key="reservationlabel">Reservations</p>
       <h2 data-key="reservationtitle">Want to make a reservation?</h2>
@@ -321,7 +344,7 @@
   </div>
 
   <!-- Language Modal -->
-  <div id="language-modal">
+  <div id="language-modal" class="hidden">
     <div class="modal-box">
       <div class="modal-logo">Pelvec</div>
       <h3>Select Language</h3>
@@ -329,6 +352,11 @@
       <button onclick="applyModalLanguage('mk')">Македонски</button>
     </div>
   </div>
+
+  <!-- Back to top -->
+  <button id="back-to-top" aria-label="Back to top">
+    <i class="fa fa-angle-up"></i>
+  </button>
 
   <script src="js/language.js"></script>
   <script src="js/main.js"></script>
